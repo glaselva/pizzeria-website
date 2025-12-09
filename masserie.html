@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Nostri Fornitori | Pizzeria Barese London</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; } /* Font elegante per le citazioni */
+        .text-puglia-red { color: #D32F2F; }
+        .bg-puglia-olive { background-color: #556B2F; } /* Verde Oliva */
+        .text-puglia-olive { color: #556B2F; }
+        .text-puglia-gold { color: #F9A825; }
+    </style>
+</head>
+<body class="bg-[#faf9f6] text-gray-800 antialiased"> <!-- Sfondo crema chiaro -->
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold tracking-tighter uppercase">BARI <span class="text-puglia-red">→</span> LDN</a>
+            
+            <div class="hidden md:flex space-x-8 items-center font-semibold text-sm uppercase tracking-wide">
+                <a href="index.html" class="hover:text-puglia-red transition">Home</a>
+                <a href="menu.html" class="hover:text-puglia-red transition">Menu</a>
+                <a href="chisiamo.html" class="hover:text-puglia-red transition">La Storia</a>
+                <a href="masserie.html" class="text-puglia-red">Le Masserie</a> <!-- Attivo -->
+                <a href="contatti.html" class="hover:text-puglia-red transition">Contatti</a>
+            </div>
+
+            <div class="flex items-center space-x-5">
+                <a href="menu.html" class="hover:text-puglia-red transition"><i class="fas fa-utensils text-xl"></i></a>
+                <button class="md:hidden focus:outline-none"><i class="fas fa-bars text-xl"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative h-[50vh] flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1505576186413-4c07c1b52994?q=80&w=2070&auto=format&fit=crop" 
+             alt="Campi Puglia" 
+             class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/40"></div>
+        
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 font-serif italic">Terra, Sole e Vento.</h1>
+            <p class="text-xl md:text-2xl font-light max-w-2xl mx-auto">
+                Conosciamo i nostri fornitori per nome. <br>Ecco da dove viene quello che mangi.
+            </p>
+        </div>
+    </header>
+
+    <!-- INTRO MAPPA -->
+    <section class="py-16 bg-white text-center">
+        <div class="container mx-auto px-6">
+            <i class="fas fa-map-marked-alt text-4xl text-puglia-olive mb-4"></i>
+            <h2 class="text-3xl font-bold mb-6">Il Triangolo del Gusto</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Abbiamo selezionato tre eccellenze nascoste tra la Murgia e il mare. 
+                Niente grossisti, niente intermediari. Solo il furgone di Zio Peppe che sale a Londra una volta al mese.
+            </p>
+        </div>
+    </section>
+
+    <!-- FORNITORE 1: IL GRANO -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="Immagini\masseria1.jpg" alt="Grano" class="rounded-lg shadow-2xl transform -rotate-2 hover:rotate-0 transition duration-500 w-full h-96 object-cover">
+                </div>
+                <div class="md:w-1/2">
+                    <span class="text-puglia-gold font-bold tracking-widest text-sm uppercase mb-2 block">Gravina in Puglia</span>
+                    <h2 class="text-4xl font-bold mb-4 text-gray-900">Masseria "Sole di Murgia"</h2>
+                    <h3 class="text-xl text-gray-500 font-serif italic mb-6">Il segreto dell'impasto perfetto</h3>
+                    
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Qui il tempo sembra essersi fermato. La famiglia Loglisci coltiva ancora il Grano Arso come si faceva un secolo fa. Dopo la mietitura, le stoppie vengono bruciate e i chicchi rimasti a terra acquistano quel sapore affumicato e tostato inconfondibile.
+                    </p>
+                    <ul class="space-y-2 mb-8 text-gray-700">
+                        <li><i class="fas fa-check text-puglia-gold mr-2"></i> Macinazione a pietra naturale</li>
+                        <li><i class="fas fa-check text-puglia-gold mr-2"></i> Grano 100% Senatore Cappelli</li>
+                        <li><i class="fas fa-check text-puglia-gold mr-2"></i> Nessun pesticida, solo preghiere</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORNITORE 2: L'OLIO (Invertito) -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="Immagini\masseria2.jpg" alt="Olio Puglia" class="rounded-lg shadow-2xl transform rotate-2 hover:rotate-0 transition duration-500 w-full h-96 object-cover">
+                </div>
+                <div class="md:w-1/2 text-right md:text-left"> <!-- Allineamento responsive -->
+                    <span class="text-puglia-olive font-bold tracking-widest text-sm uppercase mb-2 block">Otranto, Salento</span>
+                    <h2 class="text-4xl font-bold mb-4 text-gray-900">Tenuta "Vento d'Otranto"</h2>
+                    <h3 class="text-xl text-gray-500 font-serif italic mb-6">L'oro verde che pizzica in gola</h3>
+                    
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Uliveti secolari che guardano il mare Adriatico. Il vento salmastro si deposita sulle olive Coratina, donando all'olio quel carattere deciso e piccante che ti "gratta" la gola (segno di altissima qualità!).
+                    </p>
+                    <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-puglia-olive">
+                        <p class="italic text-gray-600">"L'olio non si condisce, l'olio è un ingrediente."</p>
+                        <p class="font-bold text-sm mt-2">- Donato, Capo Frantoio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORNITORE 3: I LATTICINI -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="Immagini\masseria3.jpg" alt="Burrata" class="rounded-lg shadow-2xl transform -rotate-2 hover:rotate-0 transition duration-500 w-full h-96 object-cover">
+                </div>
+                <div class="md:w-1/2">
+                    <span class="text-gray-400 font-bold tracking-widest text-sm uppercase mb-2 block">Valle d'Itria</span>
+                    <h2 class="text-4xl font-bold mb-4 text-gray-900">Caseificio "Trulli Bianchi"</h2>
+                    <h3 class="text-xl text-gray-500 font-serif italic mb-6">La regina bianca: La Burrata</h3>
+                    
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Nascosto tra i trulli di Alberobello, questo piccolo caseificio lavora il latte appena munto. La loro burrata non viaggia mai da sola: viene spedita in acqua di governo fresca per arrivare a Londra cremosa come se fosse stata fatta stamattina.
+                    </p>
+                    <a href="menu.html" class="inline-flex items-center text-puglia-red font-bold hover:underline">
+                        ASSAGGIALA SULLA NOSTRA PIZZA <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION FINALE -->
+    <section class="py-24 bg-gray-900 text-white text-center relative overflow-hidden">
+        <!-- Pattern di sfondo leggero (opzionale) -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
+        
+        <div class="relative z-10 px-6">
+            <h2 class="text-3xl md:text-5xl font-bold mb-8">Vuoi assaggiare la differenza?</h2>
+            <p class="text-gray-400 mb-10 text-lg">Non servono parole, serve una forchetta.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="menu.html" class="bg-puglia-red text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-red-700 transition shadow-lg">
+                    ORDINA ORA
+                </a>
+                <a href="contatti.html" class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-gray-900 transition">
+                    PRENOTA UN TAVOLO
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-gray-400 py-8 text-center border-t border-gray-700">
+        <p>&copy; 2025 Pizzeria Barese London.</p>
+    </footer>
+
+</body>
+</html>

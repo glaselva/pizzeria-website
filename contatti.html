@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti & Eventi | Pizzeria Barese London</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        .text-puglia-red { color: #D32F2F; }
+        .bg-puglia-red { background-color: #D32F2F; }
+        /* Stile personalizzato per i campi del form */
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+            outline: none;
+        }
+        .form-input:focus {
+            border-color: #D32F2F;
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold tracking-tighter uppercase">BARI <span class="text-puglia-red">→</span> LDN</a>
+            
+            <div class="hidden md:flex space-x-8 items-center font-semibold text-sm uppercase tracking-wide">
+                <a href="index.html" class="hover:text-puglia-red transition">Home</a>
+                <a href="menu.html" class="hover:text-puglia-red transition">Menu</a>
+                <a href="chisiamo.html" class="hover:text-puglia-red transition">La Storia</a>
+                <a href="masserie.html" class="hover:text-puglia-red transition">Le Masserie</a>
+                <a href="contatti.html" class="text-puglia-red">Contatti</a> <!-- Attivo -->
+            </div>
+
+            <div class="flex items-center space-x-5">
+                <a href="menu.html" class="hover:text-puglia-red transition"><i class="fas fa-utensils text-xl"></i></a>
+                <button class="md:hidden focus:outline-none"><i class="fas fa-bars text-xl"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="bg-gray-900 text-white pt-32 pb-12 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Vieni a trovarci</h1>
+        <p class="text-gray-400 max-w-xl mx-auto px-4">Siamo aperti tutti i giorni. Se hai una festa in mente, sei nel posto giusto.</p>
+    </header>
+
+    <div class="container mx-auto px-6 py-12">
+        <div class="grid lg:grid-cols-2 gap-12">
+            
+            <!-- COLONNA SINISTRA: INFO & MAPPA -->
+            <div>
+                <!-- Info Box -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm mb-8 border border-gray-100">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <i class="fas fa-info-circle text-puglia-red"></i> Info Utili
+                    </h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-puglia-red flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">Indirizzo</h3>
+                                <p class="text-gray-600">123 High Street, Shoreditch<br>London, E1 6AN</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-puglia-red flex-shrink-0">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">Orari Apertura</h3>
+                                <p class="text-gray-600">Lun - Ven: 12:00 - 23:00</p>
+                                <p class="text-gray-600">Sab - Dom: 12:00 - 00:00</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center text-puglia-red flex-shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">Contatti</h3>
+                                <p class="text-gray-600"><a href="tel:+4402012345678" class="hover:text-puglia-red">+44 020 1234 5678</a></p>
+                                <p class="text-gray-600"><a href="mailto:ciao@pizzeriabarese.london" class="hover:text-puglia-red">ciao@pizzeriabarese.london</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mappa (Embed Placeholder) -->
+                <div class="bg-gray-200 rounded-2xl h-80 w-full overflow-hidden shadow-sm relative group">
+                    <!-- Sostituisci questo iframe con quello vero di Google Maps -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19864.628867512345!2d-0.0987!3d51.5245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ca9a5!2sShoreditch%2C%20London!5e0!3m2!1sen!2suk!4v1620000000000!5m2!1sen!2suk" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="filter grayscale group-hover:grayscale-0 transition duration-500"></iframe>
+                    
+                    <!-- Label sovrapposta -->
+                    <div class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-lg shadow-lg text-sm font-bold pointer-events-none">
+                        📍 Siamo qui
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLONNA DESTRA: FORM EVENTI -->
+            <div class="bg-white p-8 md:p-10 rounded-2xl shadow-xl border-t-4 border-puglia-red relative overflow-hidden">
+                <!-- Decorazione sfondo -->
+                <div class="absolute top-0 right-0 -mr-10 -mt-10 w-32 h-32 bg-yellow-100 rounded-full opacity-50 z-0"></div>
+
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-bold mb-2">Organizza la tua Festa 🎉</h2>
+                    <p class="text-gray-500 mb-8">Compila il form per prenotare tavolate sopra le 8 persone o eventi privati.</p>
+
+                    <form action="#" method="POST" class="space-y-5">
+                        
+                        <!-- Nome e Email -->
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-1">Nome</label>
+                                <input type="text" class="form-input" placeholder="Il tuo nome">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-1">Email</label>
+                                <input type="email" class="form-input" placeholder="tua@email.com">
+                            </div>
+                        </div>
+
+                        <!-- Telefono -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Telefono</label>
+                            <input type="tel" class="form-input" placeholder="+44 ...">
+                        </div>
+
+                        <!-- Dettagli Evento -->
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-1">Data</label>
+                                <input type="date" class="form-input">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-1">Ospiti (circa)</label>
+                                <select class="form-input bg-white">
+                                    <option>8-15 persone</option>
+                                    <option>15-30 persone</option>
+                                    <option>30-50 persone</option>
+                                    <option>Tutto il locale (50+)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Tipo Evento -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Tipo di Evento</label>
+                            <div class="flex flex-wrap gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="event_type" class="peer sr-only">
+                                    <span class="px-4 py-2 rounded-full border border-gray-300 peer-checked:bg-gray-900 peer-checked:text-white peer-checked:border-gray-900 transition text-sm font-semibold block">Compleanno</span>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="event_type" class="peer sr-only">
+                                    <span class="px-4 py-2 rounded-full border border-gray-300 peer-checked:bg-gray-900 peer-checked:text-white peer-checked:border-gray-900 transition text-sm font-semibold block">Cena Aziendale</span>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="event_type" class="peer sr-only">
+                                    <span class="px-4 py-2 rounded-full border border-gray-300 peer-checked:bg-gray-900 peer-checked:text-white peer-checked:border-gray-900 transition text-sm font-semibold block">Altro</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Messaggio -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Richieste Speciali</label>
+                            <textarea class="form-input h-24" placeholder="Es. Vogliamo solo focaccia, opzioni senza glutine, torta a sorpresa..."></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="button" onclick="alert('Grazie! Ti ricontatteremo entro 24h per confermare la disponibilità.')" class="w-full bg-puglia-red text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:bg-red-700 transition transform hover:scale-[1.02]">
+                            INVIA RICHIESTA
+                        </button>
+                        
+                        <p class="text-xs text-gray-400 text-center mt-4">
+                            Prenotando accetti la nostra Privacy Policy. Nessuno spam, promesso.
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-10 border-t border-gray-800 text-center">
+        <div class="flex justify-center space-x-6 mb-8">
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-puglia-red transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <p class="text-gray-500 text-sm">&copy; 2025 Pizzeria Barese London.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Siamo | Pizzeria Barese London</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+        .text-puglia-red { color: #D32F2F; }
+        .bg-puglia-red { background-color: #D32F2F; }
+        .sepia-filter { filter: sepia(0.3); } /* Effetto nostalgico per le foto */
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold tracking-tighter uppercase">BARI <span class="text-puglia-red">→</span> LDN</a>
+            
+            <div class="hidden md:flex space-x-8 items-center font-semibold text-sm uppercase tracking-wide">
+                <a href="index.html" class="hover:text-puglia-red transition">Home</a>
+                <a href="menu.html" class="hover:text-puglia-red transition">Menu</a>
+                <a href="chisiamo.html" class="text-puglia-red">La Storia</a> <!-- Link Attivo -->
+                <a href="masserie.html" class="hover:text-puglia-red transition">Le Masserie</a>
+                <a href="contatti.html" class="hover:text-puglia-red transition">Contatti</a>
+            </div>
+
+            <!-- Icone Mobile/Carrello -->
+            <div class="flex items-center space-x-5">
+                <a href="menu.html" class="hover:text-puglia-red transition" title="Vai al Menu per ordinare">
+                    <i class="fas fa-utensils text-xl"></i>
+                </a>
+                <button class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Storytelling) -->
+    <header class="relative h-[60vh] flex items-center justify-center bg-gray-900 overflow-hidden">
+        <!-- Foto di Bari Vecchia o Lungomare -->
+        <img src="https://images.unsplash.com/photo-1564669616805-4b077a288929?q=80&w=2070&auto=format&fit=crop" 
+             alt="Bari Lungomare" 
+             class="absolute inset-0 w-full h-full object-cover opacity-40 sepia-filter">
+        
+        <div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
+            <span class="text-puglia-red font-bold tracking-widest uppercase mb-4 block">Since 2024</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                Abbiamo portato il sole <br> nella nebbia.
+            </h1>
+        </div>
+    </header>
+
+    <!-- IL VIAGGIO (Testo + Immagine) -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <!-- Immagine: Mani in pasta o Nonna -->
+                <div class="md:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-puglia-red/10 rounded-full z-0"></div>
+                    <img src="Immagini/nonna.jpg"
+                         alt="Making Orecchiette" 
+                         class="relative z-10 rounded-xl shadow-2xl w-full object-cover h-[500px]">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 shadow-xl rounded-lg z-20 hidden md:block">
+                        <p class="font-handwriting text-gray-500 text-sm">"Impara l'arte e mettila da parte."</p>
+                    </div>
+                </div>
+
+                <!-- Testo Storytelling -->
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6">Da Bari Vecchia a Shoreditch.</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                        Tutto è iniziato con una valigia piena di taralli e una nostalgia terribile. Quando ci siamo trasferiti a Londra, amavamo tutto di questa città, tranne una cosa: la pizza non aveva quel sapore di "casa".
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                        A Bari, il cibo non è benzina per il corpo. È una religione. È il profumo della focaccia alle 10 del mattino nei vicoli di San Nicola. È il rito della Peroni ghiacciata sul lungomare.
+                    </p>
+                    <p class="text-gray-800 font-bold text-xl mb-8 border-l-4 border-puglia-red pl-4">
+                        "Non volevamo aprire solo una pizzeria. Volevamo aprire un'ambasciata."
+                    </p>
+                    <img src="Immagini\logobari.jpg" alt="Bandiera Bari" class="w-16 opacity-50">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LA NOSTRA FILOSOFIA (3 Icone) -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-16">Le 3 Regole di Nonna</h2>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Regola 1 -->
+                <div class="p-6">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg mx-auto mb-6 text-puglia-red text-3xl">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">La pazienza è tutto</h3>
+                    <p class="text-gray-600">Il nostro impasto lievita per almeno 72 ore. Se hai fretta, mangia un sandwich.</p>
+                </div>
+                <!-- Regola 2 -->
+                <div class="p-6">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg mx-auto mb-6 text-puglia-red text-3xl">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Solo voli diretti</h3>
+                    <p class="text-gray-600">Burrata, pomodori e farina arrivano direttamente dalla Puglia ogni settimana. Niente imitazioni.</p>
+                </div>
+                <!-- Regola 3 -->
+                <div class="p-6">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg mx-auto mb-6 text-puglia-red text-3xl">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cucinare con amore</h3>
+                    <p class="text-gray-600">Sembra una frase fatta, ma se il pizzaiolo è arrabbiato, la pizza non esce buona. È scienza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IL TEAM -->
+    <section class="py-20 bg-white border-t border-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Le facce dietro la farina</h2>
+            
+            <div class="flex flex-wrap justify-center gap-10">
+                <!-- Team Member 1 -->
+                <div class="text-center w-64">
+                    <img src="Immagini\nicola.jpg" class="w-40 h-40 rounded-full object-cover mx-auto mb-4 border-4 border-gray-100 shadow-lg" alt="Nicola">
+                    <h3 class="text-xl font-bold">Nicola</h3>
+                    <p class="text-puglia-red text-sm font-bold uppercase tracking-wide mb-2">Founder & Barese DOC</p>
+                    <p class="text-gray-500 text-sm">Si lamenta del clima inglese 365 giorni l'anno. Controlla la qualità della focaccia ogni mattina.</p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="text-center w-64">
+                    <img src="https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?q=80&w=600&auto=format&fit=crop" class="w-40 h-40 rounded-full object-cover mx-auto mb-4 border-4 border-gray-100 shadow-lg" alt="Pasquale">
+                    <h3 class="text-xl font-bold">Pasquale</h3>
+                    <p class="text-puglia-red text-sm font-bold uppercase tracking-wide mb-2">Head Pizzaiolo</p>
+                    <p class="text-gray-500 text-sm">Le sue mani sono patrimonio dell'UNESCO. Non parlargli mentre stende la pasta.</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="text-center w-64">
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=600&auto=format&fit=crop" class="w-40 h-40 rounded-full object-cover mx-auto mb-4 border-4 border-gray-100 shadow-lg" alt="Giulia">
+                    <h3 class="text-xl font-bold">Giulia</h3>
+                    <p class="text-puglia-red text-sm font-bold uppercase tracking-wide mb-2">Manager</p>
+                    <p class="text-gray-500 text-sm">L'unica che riesce a mettere ordine nel caos pugliese. Sommelier di vini del Salento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Semplificato) -->
+    <footer class="bg-gray-900 text-white py-10 text-center">
+        <p class="mb-4 text-xl font-bold">Ti è venuta fame leggendo?</p>
+        <a href="menu.html" class="inline-block bg-white text-gray-900 px-8 py-3 rounded-full font-bold hover:bg-puglia-red hover:text-white transition">
+            VAI AL MENU
+        </a>
+        <p class="text-gray-500 text-sm mt-8">&copy; 2025 Pizzeria Barese London.</p>
+    </footer>
+
+</body>
+</html>

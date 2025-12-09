@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria Barese London | Authentic Apulian Soul</title>
+    <!-- Tailwind CSS per lo stile veloce e moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Google: Montserrat (Titoli) e Open Sans (Testo) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Icone (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+        .text-puglia-red { color: #D32F2F; } /* Rosso Pomodoro */
+        .bg-puglia-red { background-color: #D32F2F; }
+        .text-puglia-gold { color: #FBC02D; } /* Oro Olio */
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <!-- 1. NAVBAR (Fissa in alto) -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-extrabold tracking-tighter uppercase">
+                BARI <span class="text-puglia-red">→</span> LDN
+            </a>
+            
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex space-x-8 items-center font-semibold text-sm uppercase tracking-wide">
+                <a href="index.html" class="text-puglia-red">Home</a>
+                <a href="menu.html" class="hover:text-puglia-red transition">Menu</a>
+                <a href="chisiamo.html" class="hover:text-puglia-red transition">La Storia</a>
+                <a href="masserie.html" class="hover:text-puglia-red transition">Le Masserie</a>
+                <a href="contatti.html" class="hover:text-puglia-red transition">Contatti</a>
+            </div>
+
+            <!-- Carrello & Mobile Menu Icon -->
+            <div class="flex items-center space-x-5">
+                <a href="carrello.html" class="relative hover:text-puglia-red transition">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <!-- Badge contatore carrello (nascosto se 0) -->
+                    <span class="absolute -top-2 -right-2 bg-puglia-red text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </a>
+                <button class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    <header class="relative h-screen flex items-center justify-center bg-gray-900 overflow-hidden">
+        <!-- Immagine di sfondo (Sostituisci con la tua foto migliore) -->
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop" 
+             alt="Pizza Barese" 
+             class="absolute inset-0 w-full h-full object-cover opacity-50">
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+                La vera Bari,<br> nel cuore di Londra.
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 font-light">
+                Focaccia, Panzerotti e Pizza Sottile. <br>
+                Fatti come nonna comanda, con ingredienti giù dalla Puglia.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="menu.html" class="bg-puglia-red text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-red-700 transition shadow-lg transform hover:scale-105">
+                    ORDINA ORA
+                </a>
+                <a href="contatti.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-gray-900 transition">
+                    PRENOTA UN TAVOLO
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. I TRE PILASTRI (Classici) -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">I Classici Baresi</h2>
+                <div class="w-24 h-1 bg-puglia-red mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Card 1: Focaccia -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl shadow-lg mb-4 h-64 relative">
+                        <img src="Immagini\focaccia.jpg" alt="Focaccia Barese" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">La Focaccia</h3>
+                    <p class="text-gray-600 mb-4">Alta, soffice, con i pomodorini bruciacchiati e l'olio buono. La colazione dei campioni.</p>
+                    <a href="menu.html" class="text-puglia-red font-bold hover:underline">VAI AL MENU →</a>
+                </div>
+
+                <!-- Card 2: Panzerotto -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl shadow-lg mb-4 h-64 relative">
+                        <img src="Immagini\panzerotto.jpg" alt="Panzerotto" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Il Panzerotto</h3>
+                    <p class="text-gray-600 mb-4">Bollente e pericoloso. Mozzarella filante e pomodoro San Marzano. Occhio alla maglietta!</p>
+                    <a href="menu.html" class="text-puglia-red font-bold hover:underline">VAI AL MENU →</a>
+                </div>
+
+                <!-- Card 3: Pizza Sottile -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl shadow-lg mb-4 h-64 relative">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=800&auto=format&fit=crop" alt="Pizza Sottile" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">La Pizza Sottile</h3>
+                    <p class="text-gray-600 mb-4">Cornicione basso, impasto leggero. Scrocchiarella come piace a Bari.</p>
+                    <a href="menu.html" class="text-puglia-red font-bold hover:underline">VAI AL MENU →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. MASSERIE TEASER -->
+    <section class="py-20 bg-orange-50">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="Immagini\masseria.jpg" alt="Masseria Puglia" class="rounded-xl shadow-2xl rotate-2 hover:rotate-0 transition duration-500">
+            </div>
+            <div class="md:w-1/2">
+                <span class="text-puglia-red font-bold tracking-wider uppercase mb-2 block">Dalla terra alla tavola</span>
+                <h2 class="text-4xl font-bold mb-6 text-gray-900">Non è solo pizza. <br>È un viaggio in Puglia.</h2>
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                    Non usiamo ingredienti a caso. Ogni pomodoro, ogni goccia d'olio e ogni burrata ha un nome e un cognome. Collaboriamo direttamente con le masserie della Murgia e del Salento.
+                </p>
+                <ul class="mb-8 space-y-3">
+                    <li class="flex items-center"><i class="fas fa-check text-green-600 mr-3"></i> Farine di Grano Arso da Gravina</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-600 mr-3"></i> Olio Extravergine dal Salento</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-600 mr-3"></i> Burrata fresca dalla Valle d'Itria</li>
+                </ul>
+                <a href="masserie.html" class="inline-block border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-full font-bold hover:bg-gray-900 hover:text-white transition">
+                    CONOSCI I FORNITORI
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. REVIEWS -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12">Dicono di noi <span class="text-gray-400 font-light text-xl">(in dialetto e in inglese)</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Recensione 1 -->
+                <div class="p-8 bg-gray-50 rounded-2xl">
+                    <div class="text-puglia-red text-4xl mb-4">❝</div>
+                    <p class="text-gray-600 italic mb-6">"Finally proper Focaccia in London! I felt like I was back in Bari Vecchia walking near San Nicola."</p>
+                    <div class="font-bold">- Sarah J.</div>
+                </div>
+                <!-- Recensione 2 -->
+                <div class="p-8 bg-gray-50 rounded-2xl transform md:-translate-y-4 shadow-xl">
+                    <div class="text-puglia-red text-4xl mb-4">❝</div>
+                    <p class="text-gray-600 italic mb-6">"U' panzerott è la fine du munn! Croccante fuori e morbido dentro. Bravi!"</p>
+                    <div class="font-bold">- Michele T.</div>
+                </div>
+                <!-- Recensione 3 -->
+                <div class="p-8 bg-gray-50 rounded-2xl">
+                    <div class="text-puglia-red text-4xl mb-4">❝</div>
+                    <p class="text-gray-600 italic mb-6">"Best thin crust pizza I've had in years. Not the usual gummy dough, but crunchy and light."</p>
+                    <div class="font-bold">- David B.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. EVENTI BANNER -->
+    <section class="relative py-24 bg-gray-900 flex items-center justify-center text-center">
+        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Festa">
+        <div class="relative z-10 px-6">
+            <h2 class="text-4xl font-bold text-white mb-4">Hai una festa? Facciamo casino insieme.</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Compleanni, lauree o cene aziendali. Prenota la tua tavolata o l'intero locale.</p>
+            <a href="contatti.html" class="bg-white text-gray-900 px-8 py-4 rounded-full font-bold hover:bg-gray-200 transition">
+                ORGANIZZA LA TUA FESTA
+            </a>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16">
+            <div>
+                <h3 class="text-2xl font-bold mb-6">BARI → LDN</h3>
+                <p class="text-gray-400">Portiamo la Puglia a Londra, un morso alla volta. Solo prodotti autentici, niente imitazioni.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase tracking-wider text-sm text-gray-500">Esplora</h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li><a href="menu.html" class="hover:text-white transition">Menu</a></li>
+                    <li><a href="chisiamo.html" class="hover:text-white transition">Chi Siamo</a></li>
+                    <li><a href="masserie.html" class="hover:text-white transition">Le Masserie</a></li>
+                    <li><a href="contatti.html" class="hover:text-white transition">Contatti</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase tracking-wider text-sm text-gray-500">Vieni a trovarci</h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li><i class="fas fa-map-marker-alt mr-3 w-5"></i> 123 High Street, London</li>
+                    <li><i class="fas fa-phone mr-3 w-5"></i> +44 020 1234 5678</li>
+                    <li><i class="fas fa-envelope mr-3 w-5"></i> ciao@pizzeriabarese.london</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase tracking-wider text-sm text-gray-500">Orari</h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex justify-between"><span>Lun - Ven</span> <span>12:00 - 23:00</span></li>
+                    <li class="flex justify-between text-white font-bold"><span>Sab - Dom</span> <span>12:00 - 00:00</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+            <p>&copy; 2025 Pizzeria Barese London. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script per Menu Mobile (Semplice) -->
+    <script>
+        // Logica base per aprire/chiudere il menu su mobile
+        const btn = document.querySelector("button.md\\:hidden");
+        const menu = document.querySelector(".md\\:flex");
+        // Nota: per una vera implementazione mobile, aggiungeresti una classe 'hidden' o 'block' 
+        // a un div separato per il menu mobile. Qui è solo predisposto.
+    </script>
+</body>
+</html>
