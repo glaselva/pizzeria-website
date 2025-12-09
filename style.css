@@ -1,0 +1,139 @@
+/* style.css */
+:root {
+    --primary-red: #D32F2F; /* Rosso Bari */
+    --white: #FFFFFF;
+    --light-grey: #f4f4f4;
+    --text-dark: #333;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+header {
+    background-color: var(--white);
+    border-bottom: 4px solid var(--primary-red);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-red);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-red);
+}
+
+/* Bottone Carrello Snipcart */
+.snipcart-checkout {
+    background-color: var(--primary-red);
+    color: var(--white) !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--primary-red);
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 { margin-bottom: 10px; font-size: 3rem; }
+.btn-cta {
+    display: inline-block;
+    background: var(--white);
+    color: var(--primary-red);
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Sections */
+.section { padding: 60px 0; }
+.bg-light { background-color: var(--light-grey); }
+
+h2 { color: var(--primary-red); text-align: center; margin-bottom: 40px; }
+
+/* Menu Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.menu-item {
+    background: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.menu-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.price { font-size: 1.2rem; color: var(--primary-red); font-weight: bold; display: block; margin: 10px 0; }
+.add-btn {
+    background: var(--primary-red);
+    color: var(--white);
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    background: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Form */
+input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; }
