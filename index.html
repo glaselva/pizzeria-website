@@ -22,35 +22,47 @@
 <body class="text-gray-800 antialiased">
 
     <!-- 1. NAVBAR (Fissa in alto) -->
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#" class="text-2xl font-extrabold tracking-tighter uppercase">
-                BARI <span class="text-puglia-red">→</span> LDN
-            </a>
-            
-            <!-- Menu Desktop -->
-            <div class="hidden md:flex space-x-8 items-center font-semibold text-sm uppercase tracking-wide">
-                <a href="index.html" class="text-puglia-red">Home</a>
-                <a href="menu.html" class="hover:text-puglia-red transition">Menu</a>
-                <a href="chisiamo.html" class="hover:text-puglia-red transition">La Storia</a>
-                <a href="masserie.html" class="hover:text-puglia-red transition">Le Masserie</a>
-                <a href="contatti.html" class="hover:text-puglia-red transition">Contatti</a>
-            </div>
-
-            <!-- Carrello & Mobile Menu Icon -->
-            <div class="flex items-center space-x-5">
-                <a href="carrello.html" class="relative hover:text-puglia-red transition">
-                    <i class="fas fa-shopping-cart text-xl"></i>
-                    <!-- Badge contatore carrello (nascosto se 0) -->
-                    <span class="absolute -top-2 -right-2 bg-puglia-red text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
-                </a>
-                <button class="md:hidden focus:outline-none">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
+<nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="index.html" class="text-2xl font-extrabold tracking-tighter uppercase">BARI <span class="text-puglia-red">→</span> LDN</a>
+        
+        <!-- Menu Desktop -->
+        <div class="hidden md:flex space-x-8 items-center font-semibold text-sm uppercase tracking-wide">
+            <a href="index.html" class="text-puglia-red">Home</a>
+            <a href="menu.html" class="hover:text-puglia-red transition">Menu</a>
+            <a href="chisiamo.html" class="hover:text-puglia-red transition">La Storia</a>
+            <a href="masserie.html" class="hover:text-puglia-red transition">Le Masserie</a>
+            <a href="contatti.html" class="hover:text-puglia-red transition">Contatti</a>
         </div>
-    </nav>
+
+        <!-- Destra: Carrello e Burger -->
+        <div class="flex items-center space-x-5">
+            <!-- Link al Carrello (Icona) -->
+            <a href="menu.html" class="relative hover:text-puglia-red transition" title="Vai al Menu">
+                <i class="fas fa-shopping-cart text-xl"></i>
+            </a>
+
+            <!-- Burger Menu (Solo Mobile) -->
+            <button onclick="toggleMobileMenu()" class="md:hidden focus:outline-none text-2xl p-2">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center space-y-8 text-xl font-bold uppercase">
+    <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-3xl text-gray-800 focus:outline-none">
+        <i class="fas fa-times"></i>
+    </button>
+    <a href="index.html" onclick="toggleMobileMenu()" class="text-puglia-red">Home</a>
+    <a href="menu.html" onclick="toggleMobileMenu()" class="hover:text-puglia-red">Menu</a>
+    <a href="chisiamo.html" onclick="toggleMobileMenu()" class="hover:text-puglia-red">La Storia</a>
+    <a href="masserie.html" onclick="toggleMobileMenu()" class="hover:text-puglia-red">Le Masserie</a>
+    <a href="contatti.html" onclick="toggleMobileMenu()" class="hover:text-puglia-red">Contatti</a>
+</div>
+
+
 
     <!-- 2. HERO SECTION -->
     <header class="relative h-screen flex items-center justify-center bg-gray-900 overflow-hidden">
@@ -233,5 +245,18 @@
         // Nota: per una vera implementazione mobile, aggiungeresti una classe 'hidden' o 'block' 
         // a un div separato per il menu mobile. Qui è solo predisposto.
     </script>
+
+    <script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        if (menu.classList.contains('translate-x-full')) {
+            menu.classList.remove('translate-x-full'); // APRE (Toglie il nascondiglio)
+        } else {
+            menu.classList.add('translate-x-full');    // CHIUDE (Rimette il nascondiglio)
+        }
+    }
+</script>
+
+
 </body>
 </html>

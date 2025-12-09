@@ -45,10 +45,30 @@
 
             <div class="flex items-center space-x-5">
                 <a href="menu.html" class="hover:text-puglia-red transition"><i class="fas fa-utensils text-xl"></i></a>
-                <button class="md:hidden focus:outline-none"><i class="fas fa-bars text-xl"></i></button>
+                <button onclick="toggleMobileMenu()" class="md:hidden focus:outline-none text-2xl p-2">
+                    <i class="fas fa-bars"></i>
+                </button>
+
             </div>
         </div>
     </nav>
+
+    <!-- MOBILE MENU (Nascosto di default) -->
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center space-y-8 text-xl font-bold uppercase">
+    <!-- Tasto Chiudi -->
+    <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-3xl text-gray-800 focus:outline-none">
+        <i class="fas fa-times"></i>
+    </button>
+
+    <!-- Link -->
+    <a href="index.html" onclick="toggleMobileMenu()" class="hover:text-puglia-red transition">Home</a>
+    <a href="menu.html" onclick="toggleMobileMenu()" class="hover:text-puglia-red transition">Menu</a>
+    <a href="chisiamo.html" onclick="toggleMobileMenu()" class="hover:text-puglia-red transition">La Storia</a>
+    <a href="masserie.html" onclick="toggleMobileMenu()" class="hover:text-puglia-red transition">Le Masserie</a>
+    <a href="contatti.html" onclick="toggleMobileMenu()" class="hover:text-puglia-red transition">Contatti</a>
+</div>
+
+
 
     <!-- HEADER -->
     <header class="bg-gray-900 text-white pt-32 pb-12 text-center">
@@ -209,6 +229,18 @@
         </div>
         <p class="text-gray-500 text-sm">&copy; 2025 Pizzeria Barese London.</p>
     </footer>
+
+    <script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        if (menu.classList.contains('translate-x-full')) {
+            menu.classList.remove('translate-x-full'); // APRE (Toglie il nascondiglio)
+        } else {
+            menu.classList.add('translate-x-full');    // CHIUDE (Rimette il nascondiglio)
+        }
+    }
+</script>
+
 
 </body>
 </html>
