@@ -2,58 +2,59 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>I Nostri Fornitori | I Due Fratelli</title>
+    <title>Fornitori | I Due Fratelli</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
 </head>
 <body>
     <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">🍕 I Due Fratelli</a>
-                <ul class="nav-links">
-                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="fornitori.html">Fornitori</a></li>
-                    <li><a href="contattami.html">Contatti</a></li>
-                    <li><a href="#" class="snipcart-checkout">🛒 <span class="snipcart-items-count">0</span></a></li>
-                </ul>
-            </nav>
+        <div class="navbar">
+            <a href="index.html" class="logo">I Due Fratelli 🇮🇹</a>
+            <ul class="nav-menu">
+                <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="fornitori.html">Fornitori</a></li>
+                <li><a href="contattami.html">Contatti</a></li>
+                <li><a href="#" class="snipcart-checkout cart-btn">Carrello (<span class="snipcart-items-count">0</span>)</a></li>
+            </ul>
         </div>
     </header>
 
-    <section class="section">
-        <div class="container">
-            <h2>L'Eccellenza Italiana</h2>
-            <p style="text-align:center;">Non scendiamo a compromessi. Importiamo direttamente dall'Italia grazie ai nostri partner di fiducia.</p>
-            
-            <div class="menu-grid" style="margin-top:40px;">
-                <div class="menu-item">
-                    <h3>Molino Pugliese "Oro Bianco"</h3>
-                    <p><strong>Provenienza:</strong> Altamura, BA</p>
-                    <p>Ci forniscono la semola rimacinata che rende le nostre pizze croccanti e dorate, proprio come vuole la tradizione.</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Caseificio "Murgia Viva"</h3>
-                    <p><strong>Provenienza:</strong> Gioia del Colle, BA</p>
-                    <p>La loro mozzarella fiordilatte arriva fresca ogni settimana. La burrata? Un'esplosione di latte che ti farà piangere di gioia.</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Olio "Il Vecchio Ulivo"</h3>
-                    <p><strong>Provenienza:</strong> Bitonto, BA</p>
-                    <p>L'oro verde di Puglia. Usiamo solo olio extravergine d'oliva spremuto a freddo per condire le nostre pizze a crudo.</p>
-                </div>
-                <div class="menu-item">
-                    <h3>Conserve "Nonna Rosa"</h3>
-                    <p><strong>Provenienza:</strong> Foggia, FG</p>
-                    <p>Pomodori San Marzano maturati al sole del sud. La base dolce e acida perfetta per la nostra salsa segreta.</p>
-                </div>
+    <div class="container">
+        <h2 style="text-align:center; color: var(--bari-red);">Le Nostre Materie Prime</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Molino "Spiga d'Oro"</h3>
+                <p><strong>Altamura (BA)</strong></p>
+                <p>La farina di semola rimacinata che usiamo per la base croccante.</p>
+            </div>
+            <div class="card">
+                <h3>Caseificio "Murgia Bianca"</h3>
+                <p><strong>Gioia del Colle (BA)</strong></p>
+                <p>Mozzarella e Burrata spedite via aerea ogni due giorni.</p>
+            </div>
+            <div class="card">
+                <h3>Oleificio "Santo Spirito"</h3>
+                <p><strong>Bitonto (BA)</strong></p>
+                <p>Olio Extra Vergine d'Oliva spremuto a freddo. L'oro di Puglia.</p>
+            </div>
+            <div class="card">
+                <h3>Azienda Agricola "Il Rosso"</h3>
+                <p><strong>Foggia (FG)</strong></p>
+                <p>Pomodori pelati maturati al sole del Tavoliere.</p>
             </div>
         </div>
-    </section>
+    </div>
 
     <footer>
         <p>&copy; 2025 I Due Fratelli London Ltd.</p>
     </footer>
+
+    <div hidden id="snipcart" 
+         data-api-key="NDNmOTU4MGQtYjJiNC00MGE0LWJmZjQtOGEyMWUxMDRiMWZkNjM5MDA4MTc3NDgzMDY4MTI4" 
+         data-config-modal-style="side" 
+         data-currency="GBP"></div>
+    <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

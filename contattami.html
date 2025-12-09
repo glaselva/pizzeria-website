@@ -4,52 +4,47 @@
     <meta charset="UTF-8">
     <title>Contattami | I Due Fratelli</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
 </head>
 <body>
     <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">🍕 I Due Fratelli</a>
-                <ul class="nav-links">
-                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="fornitori.html">Fornitori</a></li>
-                    <li><a href="contattami.html">Contatti</a></li>
-                    <li><a href="#" class="snipcart-checkout">🛒 <span class="snipcart-items-count">0</span></a></li>
-                </ul>
-            </nav>
+        <div class="navbar">
+            <a href="index.html" class="logo">I Due Fratelli 🇮🇹</a>
+            <ul class="nav-menu">
+                <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="fornitori.html">Fornitori</a></li>
+                <li><a href="contattami.html">Contatti</a></li>
+                <li><a href="#" class="snipcart-checkout cart-btn">Carrello (<span class="snipcart-items-count">0</span>)</a></li>
+            </ul>
         </div>
     </header>
 
-    <section class="section">
-        <div class="container" style="max-width: 600px;">
-            <h2>Scrivici</h2>
-            <p style="text-align:center;">Vuoi prenotare un tavolo o hai domande sugli allergeni? Compila il modulo.</p>
+    <div class="container" style="max-width: 600px;">
+        <h2 style="text-align:center; color: var(--bari-red);">Scrivici</h2>
+        <form class="contact-form">
+            <label>Nome</label>
+            <input type="text" placeholder="Il tuo nome">
             
-            <form action="#" style="margin-top:20px;">
-                <label>Nome</label>
-                <input type="text" placeholder="Il tuo nome">
-                
-                <label>Email</label>
-                <input type="email" placeholder="La tua email">
-                
-                <label>Messaggio</label>
-                <textarea rows="5" placeholder="Scrivi qui il tuo messaggio..."></textarea>
-                
-                <button type="submit" class="btn-cta" style="border:none; cursor:pointer; width:100%;">INVIA MESSAGGIO</button>
-            </form>
-
-            <div style="margin-top:50px; text-align:center;">
-                <h3>Dove Siamo</h3>
-                <p>123 Fake Street, Shoreditch, London E1 6AN</p>
-                <p>Tel: +44 020 1234 5678</p>
-            </div>
-        </div>
-    </section>
+            <label>Email</label>
+            <input type="email" placeholder="La tua email">
+            
+            <label>Messaggio</label>
+            <textarea rows="5" placeholder="Come possiamo aiutarti?"></textarea>
+            
+            <button type="submit" class="add-to-cart">INVIA</button>
+        </form>
+    </div>
 
     <footer>
         <p>&copy; 2025 I Due Fratelli London Ltd.</p>
     </footer>
+
+    <div hidden id="snipcart" 
+         data-api-key="NDNmOTU4MGQtYjJiNC00MGE0LWJmZjQtOGEyMWUxMDRiMWZkNjM5MDA4MTc3NDgzMDY4MTI4" 
+         data-config-modal-style="side" 
+         data-currency="GBP"></div>
+    <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

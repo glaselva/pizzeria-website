@@ -2,189 +2,219 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu | I Due Fratelli</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
 </head>
 <body>
+
     <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">🍕 I Due Fratelli</a>
-                <ul class="nav-links">
-                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="fornitori.html">Fornitori</a></li>
-                    <li><a href="contattami.html">Contatti</a></li>
-                    <li><a href="#" class="snipcart-checkout">🛒 <span class="snipcart-items-count">0</span></a></li>
-                </ul>
-            </nav>
+        <div class="navbar">
+            <a href="index.html" class="logo">I Due Fratelli 🇮🇹</a>
+            <ul class="nav-menu">
+                <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="fornitori.html">Fornitori</a></li>
+                <li><a href="contattami.html">Contatti</a></li>
+                <li><a href="#" class="snipcart-checkout cart-btn">Carrello (<span class="snipcart-items-count">0</span>)</a></li>
+            </ul>
         </div>
     </header>
 
-    <section class="section bg-light">
-        <div class="container">
-            <h2>Le Nostre Pizze</h2>
-            <div class="menu-grid">
-                <!-- Pizza 1 -->
-                <div class="menu-item">
-                    <h3>Margherita</h3>
-                    <p>Pomodoro San Marzano, Mozzarella, Basilico.</p>
-                    <span class="price">£10.00</span>
-                    <button class="snipcart-add-item add-btn"
-                        data-item-id="pizza-margherita"
-                        data-item-price="10.00"
-                        data-item-url="/menu.html"
-                        data-item-name="Margherita">Aggiungi</button>
-                </div>
-                <!-- Pizza 2 -->
-                <div class="menu-item">
-                    <h3>La Barese</h3>
-                    <p>Cime di rapa, Salsiccia, Mozzarella.</p>
-                    <span class="price">£13.50</span>
-                    <button class="snipcart-add-item add-btn"
-                        data-item-id="pizza-barese"
-                        data-item-price="13.50"
-                        data-item-url="/menu.html"
-                        data-item-name="La Barese">Aggiungi</button>
-                </div>
-                <!-- Pizza 3 -->
-                <div class="menu-item">
-                    <h3>Diavola</h3>
-                    <p>Pomodoro, Mozzarella, Salame Piccante.</p>
-                    <span class="price">£12.00</span>
-                    <button class="snipcart-add-item add-btn"
-                        data-item-id="pizza-diavola"
-                        data-item-price="12.00"
-                        data-item-url="/menu.html"
-                        data-item-name="Diavola">Aggiungi</button>
-                </div>
-                <!-- Pizza 4 -->
-                <div class="menu-item">
-                    <h3>San Nicola</h3>
-                    <p>Burrata, Pomodori Secchi, Pesto.</p>
-                    <span class="price">£14.00</span>
-                    <button class="snipcart-add-item add-btn"
-                        data-item-id="pizza-sannicola"
-                        data-item-price="14.00"
-                        data-item-url="/menu.html"
-                        data-item-name="San Nicola">Aggiungi</button>
-                </div>
-                <!-- Pizza 5 -->
-                <div class="menu-item">
-                    <h3>Capricciosa</h3>
-                    <p>Carciofi, Funghi, Prosciutto, Olive.</p>
-                    <span class="price">£13.00</span>
-                    <button class="snipcart-add-item add-btn"
-                        data-item-id="pizza-capricciosa"
-                        data-item-price="13.00"
-                        data-item-url="/menu.html"
-                        data-item-name="Capricciosa">Aggiungi</button>
-                </div>
-                <!-- Pizza 6 -->
-                <div class="menu-item">
-                    <h3>Quattro Formaggi</h3>
-                    <p>Gorgonzola, Mozzarella, Pecorino, Provola.</p>
-                    <span class="price">£12.50</span>
-                    <button class="snipcart-add-item add-btn"
-                        data-item-id="pizza-4formaggi"
-                        data-item-price="12.50"
-                        data-item-url="/menu.html"
-                        data-item-name="Quattro Formaggi">Aggiungi</button>
-                </div>
-                <!-- Pizza 7 -->
-                <div class="menu-item">
-                    <h3>Ortolana</h3>
-                    <p>Melanzane, Zucchine, Peperoni.</p>
-                    <span class="price">£11.50</span>
-                    <button class="snipcart-add-item add-btn"
-                        data-item-id="pizza-ortolana"
-                        data-item-price="11.50"
-                        data-item-url="/menu.html"
-                        data-item-name="Ortolana">Aggiungi</button>
-                </div>
-                <!-- Pizza 8 -->
-                <div class="menu-item">
-                    <h3>Marinara</h3>
-                    <p>Pomodoro, Aglio, Origano, Olio EVO.</p>
-                    <span class="price">£9.00</span>
-                    <button class="snipcart-add-item add-btn"
-                        data-item-id="pizza-marinara"
-                        data-item-price="9.00"
-                        data-item-url="/menu.html"
-                        data-item-name="Marinara">Aggiungi</button>
-                </div>
+    <div class="container">
+        <h2 style="text-align:center; color: var(--bari-red);">Le Nostre Pizze</h2>
+        <div class="grid">
+            <!-- 8 Pizze -->
+            <div class="card">
+                <h3>Margherita</h3>
+                <p>Pomodoro, Mozzarella, Basilico.</p>
+                <span class="price">£10.00</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="pizza-margherita"
+                    data-item-price="10.00"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Margherita">Aggiungi</button>
             </div>
-
-            <h2>Sides & Fritti</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h3>Panzerotti Fritti</h3>
-                    <p>Il classico barese: pomodoro e mozzarella.</p>
-                    <span class="price">£4.50</span>
-                    <button class="snipcart-add-item add-btn" data-item-id="side-panzerotti" data-item-price="4.50" data-item-url="/menu.html" data-item-name="Panzerotti">Aggiungi</button>
-                </div>
-                <div class="menu-item">
-                    <h3>Arancini di Riso</h3>
-                    <p>Ripieno al ragù.</p>
-                    <span class="price">£5.00</span>
-                    <button class="snipcart-add-item add-btn" data-item-id="side-arancini" data-item-price="5.00" data-item-url="/menu.html" data-item-name="Arancini">Aggiungi</button>
-                </div>
-                <div class="menu-item">
-                    <h3>Patatine Fritte</h3>
-                    <p>Croccanti e salate.</p>
-                    <span class="price">£3.50</span>
-                    <button class="snipcart-add-item add-btn" data-item-id="side-patatine" data-item-price="3.50" data-item-url="/menu.html" data-item-name="Patatine">Aggiungi</button>
-                </div>
+            <div class="card">
+                <h3>Diavola</h3>
+                <p>Pomodoro, Mozzarella, Spianata piccante.</p>
+                <span class="price">£12.00</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="pizza-diavola"
+                    data-item-price="12.00"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Diavola">Aggiungi</button>
             </div>
-
-            <h2>Dolci</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h3>Sporcamuss</h3>
-                    <p>Pasta sfoglia calda e crema pasticcera.</p>
-                    <span class="price">£6.00</span>
-                    <button class="snipcart-add-item add-btn" data-item-id="dolce-sporcamuss" data-item-price="6.00" data-item-url="/menu.html" data-item-name="Sporcamuss">Aggiungi</button>
-                </div>
-                <div class="menu-item">
-                    <h3>Tiramisu</h3>
-                    <p>Fatto in casa.</p>
-                    <span class="price">£6.50</span>
-                    <button class="snipcart-add-item add-btn" data-item-id="dolce-tiramisu" data-item-price="6.50" data-item-url="/menu.html" data-item-name="Tiramisu">Aggiungi</button>
-                </div>
-                <div class="menu-item">
-                    <h3>Cannolo Siciliano</h3>
-                    <p>Ricotta di pecora.</p>
-                    <span class="price">£5.50</span>
-                    <button class="snipcart-add-item add-btn" data-item-id="dolce-cannolo" data-item-price="5.50" data-item-url="/menu.html" data-item-name="Cannolo">Aggiungi</button>
-                </div>
+            <div class="card">
+                <h3>La Barese</h3>
+                <p>Cime di rapa, Salsiccia, Mozzarella.</p>
+                <span class="price">£13.50</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="pizza-barese"
+                    data-item-price="13.50"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="La Barese">Aggiungi</button>
             </div>
-
-            <h2>Bevande</h2>
-            <div class="menu-grid">
-                 <div class="menu-item">
-                    <h3>Birra Peroni</h3>
-                    <span class="price">£4.00</span>
-                    <button class="snipcart-add-item add-btn" data-item-id="drink-peroni" data-item-price="4.00" data-item-url="/menu.html" data-item-name="Peroni">Aggiungi</button>
-                </div>
-                 <div class="menu-item">
-                    <h3>Coca Cola</h3>
-                    <span class="price">£3.00</span>
-                    <button class="snipcart-add-item add-btn" data-item-id="drink-coca" data-item-price="3.00" data-item-url="/menu.html" data-item-name="Coca Cola">Aggiungi</button>
-                </div>
-                 <div class="menu-item">
-                    <h3>Acqua Naturale</h3>
-                    <span class="price">£2.00</span>
-                    <button class="snipcart-add-item add-btn" data-item-id="drink-acqua" data-item-price="2.00" data-item-url="/menu.html" data-item-name="Acqua">Aggiungi</button>
-                </div>
+            <div class="card">
+                <h3>Capricciosa</h3>
+                <p>Carciofi, Funghi, Prosciutto Cotto, Olive.</p>
+                <span class="price">£13.00</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="pizza-capricciosa"
+                    data-item-price="13.00"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Capricciosa">Aggiungi</button>
+            </div>
+            <div class="card">
+                <h3>Bufalina</h3>
+                <p>Pomodoro, Mozzarella di Bufala a crudo.</p>
+                <span class="price">£14.00</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="pizza-bufalina"
+                    data-item-price="14.00"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Bufalina">Aggiungi</button>
+            </div>
+            <div class="card">
+                <h3>4 Formaggi</h3>
+                <p>Gorgonzola, Fontina, Parmigiano, Mozzarella.</p>
+                <span class="price">£12.50</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="pizza-4formaggi"
+                    data-item-price="12.50"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="4 Formaggi">Aggiungi</button>
+            </div>
+            <div class="card">
+                <h3>Vegetariana</h3>
+                <p>Peperoni, Melanzane, Zucchine.</p>
+                <span class="price">£11.50</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="pizza-vegetariana"
+                    data-item-price="11.50"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Vegetariana">Aggiungi</button>
+            </div>
+            <div class="card">
+                <h3>Marinara</h3>
+                <p>Pomodoro, Aglio, Origano (Senza formaggio).</p>
+                <span class="price">£9.00</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="pizza-marinara"
+                    data-item-price="9.00"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Marinara">Aggiungi</button>
             </div>
         </div>
-    </section>
+
+        <h2 style="text-align:center; color: var(--bari-red); margin-top:50px;">Sides & Fritti</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Panzerotto Fritto</h3>
+                <p>Pomodoro e Mozzarella.</p>
+                <span class="price">£4.50</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="side-panzerotto"
+                    data-item-price="4.50"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Panzerotto">Aggiungi</button>
+            </div>
+            <div class="card">
+                <h3>Arancini di Riso</h3>
+                <p>Al ragù.</p>
+                <span class="price">£5.00</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="side-arancini"
+                    data-item-price="5.00"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Arancini">Aggiungi</button>
+            </div>
+            <div class="card">
+                <h3>Patatine Fritte</h3>
+                <span class="price">£3.50</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="side-patatine"
+                    data-item-price="3.50"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Patatine">Aggiungi</button>
+            </div>
+        </div>
+
+        <h2 style="text-align:center; color: var(--bari-red); margin-top:50px;">Dolci</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Sporcamuss</h3>
+                <p>Sfoglia calda alla crema.</p>
+                <span class="price">£6.00</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="dolce-sporcamuss"
+                    data-item-price="6.00"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Sporcamuss">Aggiungi</button>
+            </div>
+            <div class="card">
+                <h3>Tiramisù</h3>
+                <span class="price">£6.50</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="dolce-tiramisu"
+                    data-item-price="6.50"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Tiramisu">Aggiungi</button>
+            </div>
+            <div class="card">
+                <h3>Bocconotto</h3>
+                <p>Crema e amarena.</p>
+                <span class="price">£4.00</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="dolce-bocconotto"
+                    data-item-price="4.00"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Bocconotto">Aggiungi</button>
+            </div>
+        </div>
+
+        <h2 style="text-align:center; color: var(--bari-red); margin-top:50px;">Drinks</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Birra Peroni</h3>
+                <span class="price">£4.00</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="drink-peroni"
+                    data-item-price="4.00"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Peroni">Aggiungi</button>
+            </div>
+            <div class="card">
+                <h3>Coca Cola</h3>
+                <span class="price">£3.00</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="drink-coca"
+                    data-item-price="3.00"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Coca Cola">Aggiungi</button>
+            </div>
+            <div class="card">
+                <h3>Acqua</h3>
+                <span class="price">£2.00</span>
+                <button class="add-to-cart snipcart-add-item"
+                    data-item-id="drink-acqua"
+                    data-item-price="2.00"
+                    data-item-url="https://glaselva.github.io/pizzeria-website/menu.html"
+                    data-item-name="Acqua">Aggiungi</button>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 I Due Fratelli London Ltd.</p>
     </footer>
 
+    <!-- Snippet Snipcart Funzionante -->
+    <div hidden id="snipcart" 
+         data-api-key="NDNmOTU4MGQtYjJiNC00MGE0LWJmZjQtOGEyMWUxMDRiMWZkNjM5MDA4MTc3NDgzMDY4MTI4" 
+         data-config-modal-style="side" 
+         data-currency="GBP"></div>
+    <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

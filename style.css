@@ -1,36 +1,36 @@
 /* style.css */
 :root {
-    --primary-red: #D32F2F; /* Rosso Bari */
+    --bari-red: #D6001C; /* Rosso bandiera di Bari */
     --white: #FFFFFF;
-    --light-grey: #f4f4f4;
-    --text-dark: #333;
+    --black: #222222;
+    --gray: #f8f9fa;
 }
 
+* { box-sizing: border-box; }
+
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--white);
-    color: var(--text-dark);
+    color: var(--black);
+    line-height: 1.6;
 }
 
+/* Header & Nav */
 header {
     background-color: var(--white);
-    border-bottom: 4px solid var(--primary-red);
-    padding: 1rem 0;
+    border-bottom: 5px solid var(--bari-red);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.container {
-    max-width: 1100px;
+.navbar {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-}
-
-nav {
+    padding: 1rem 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,102 +38,118 @@ nav {
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-red);
+    font-weight: 900;
+    color: var(--bari-red);
     text-transform: uppercase;
     text-decoration: none;
+    letter-spacing: 1px;
 }
 
-.nav-links {
+.nav-menu {
     list-style: none;
     display: flex;
     gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-links a {
+.nav-menu a {
     text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
+    color: var(--black);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--primary-red);
-}
+.nav-menu a:hover { color: var(--bari-red); }
 
-/* Bottone Carrello Snipcart */
-.snipcart-checkout {
-    background-color: var(--primary-red);
+/* Snipcart Button in Menu */
+.cart-btn {
+    background-color: var(--bari-red);
     color: var(--white) !important;
     padding: 8px 15px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    border-radius: 4px;
 }
 
-/* Hero Section */
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
 .hero {
-    background-color: var(--primary-red);
+    background: linear-gradient(rgba(214, 0, 28, 0.9), rgba(214, 0, 28, 0.8)), url('https://placehold.co/1200x600/333/fff?text=Pizza+Bari');
+    background-size: cover;
+    background-position: center;
     color: var(--white);
     text-align: center;
     padding: 100px 20px;
 }
 
-.hero h1 { margin-bottom: 10px; font-size: 3rem; }
-.btn-cta {
+.hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+.hero p { font-size: 1.2rem; margin-bottom: 30px; }
+
+.btn-primary {
     display: inline-block;
-    background: var(--white);
-    color: var(--primary-red);
-    padding: 10px 25px;
+    background-color: var(--white);
+    color: var(--bari-red);
+    padding: 12px 30px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    margin-top: 20px;
+    text-transform: uppercase;
 }
 
-/* Sections */
-.section { padding: 60px 0; }
-.bg-light { background-color: var(--light-grey); }
+.btn-primary:hover { background-color: var(--black); color: var(--white); }
 
-h2 { color: var(--primary-red); text-align: center; margin-bottom: 40px; }
-
-/* Menu Grid */
-.menu-grid {
+/* Grids */
+.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-.menu-item {
-    background: var(--white);
-    border: 1px solid #ddd;
-    border-radius: 8px;
+.card {
+    border: 1px solid #eee;
     padding: 20px;
+    border-radius: 8px;
     text-align: center;
+    background: var(--white);
     transition: transform 0.2s;
 }
 
-.menu-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.price { font-size: 1.2rem; color: var(--primary-red); font-weight: bold; display: block; margin: 10px 0; }
-.add-btn {
-    background: var(--primary-red);
+.card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.card h3 { color: var(--bari-red); margin-top: 0; }
+.price { display: block; font-size: 1.25rem; font-weight: bold; margin: 15px 0; }
+
+.add-to-cart {
+    background-color: var(--bari-red);
     color: var(--white);
     border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 4px;
+    padding: 10px 20px;
     width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
 }
 
-/* Footer */
+.add-to-cart:hover { background-color: #b00017; }
+
+/* Forms */
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
 footer {
-    background: var(--text-dark);
+    background-color: var(--black);
     color: var(--white);
     text-align: center;
     padding: 20px;
     margin-top: 50px;
 }
-
-/* Form */
-input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; }

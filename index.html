@@ -2,48 +2,48 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Due Fratelli - Pizzeria Barese a Londra</title>
+    <title>Pizzeria I Due Fratelli | Bari a Londra</title>
     <link rel="stylesheet" href="style.css">
+    
+    <!-- CSS Snipcart -->
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">🍕 I Due Fratelli</a>
-                <ul class="nav-links">
-                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="fornitori.html">Fornitori</a></li>
-                    <li><a href="contattami.html">Contatti</a></li>
-                    <!-- Carrello Snipcart -->
-                    <li><a href="#" class="snipcart-checkout">🛒 <span class="snipcart-items-count">0</span></a></li>
-                </ul>
-            </nav>
+        <div class="navbar">
+            <a href="index.html" class="logo">I Due Fratelli 🇮🇹</a>
+            <ul class="nav-menu">
+                <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="fornitori.html">Fornitori</a></li>
+                <li><a href="contattami.html">Contatti</a></li>
+                <li><a href="#" class="snipcart-checkout cart-btn">Carrello (<span class="snipcart-items-count">0</span>)</a></li>
+            </ul>
         </div>
     </header>
 
     <div class="hero">
-        <div class="container">
-            <h1>Autentica Pizza Barese a Londra</h1>
-            <p>Dal lungomare di Bari alle strade di Londra. Sottile, croccante, vera.</p>
-            <a href="menu.html" class="btn-cta">ORDINA ORA</a>
-        </div>
+        <h1>La Vera Pizza Barese</h1>
+        <p>Da Pietro e Giuseppe, il sapore di casa nel cuore di Londra.</p>
+        <a href="menu.html" class="btn-primary">ORDINA ORA</a>
     </div>
 
-    <section class="section">
-        <div class="container" style="text-align: center;">
-            <h2>Benvenuti da Pietro e Giuseppe</h2>
-            <p>Portiamo il sapore del Sud Italia direttamente a casa tua.</p>
-            <img src="https://placehold.co/800x400/D32F2F/FFFFFF?text=Forno+a+Legna+Tradizionale" alt="Forno Pizzeria" style="max-width:100%; margin-top:20px; border-radius:10px;">
-        </div>
-    </section>
+    <div class="container" style="text-align: center;">
+        <h2 style="color: var(--bari-red);">Benvenuti</h2>
+        <p>Siamo aperti tutti i giorni. Venite a provare l'autentico impasto sottile e croccante.</p>
+    </div>
 
     <footer>
-        <p>&copy; 2025 I Due Fratelli London Ltd. | Bari x London</p>
+        <p>&copy; 2025 I Due Fratelli London Ltd.</p>
     </footer>
 
+    <!-- Snippet Snipcart Funzionante -->
+    <div hidden id="snipcart" 
+         data-api-key="NDNmOTU4MGQtYjJiNC00MGE0LWJmZjQtOGEyMWUxMDRiMWZkNjM5MDA4MTc3NDgzMDY4MTI4" 
+         data-config-modal-style="side" 
+         data-currency="GBP"></div>
+    <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
