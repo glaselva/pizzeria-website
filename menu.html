@@ -334,7 +334,7 @@
     try {
         // Chiama la funzione serverless su Netlify
         // NOTA: /.netlify/functions/... è il percorso standard
-        const response = await fetch('/.netlify/functions/create-checkout-session', {
+        const response = await fetch('https://pizzeria-website-azure.vercel.app/api/checkout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ items: cart }),
