@@ -7,35 +7,34 @@ const headers = {
 };
 
 exports.handler = async (event, context) => {
-  // Gestione pre-flight per CORS (sicurezza browser)
+  // 1. Gestione CORS (permetti al browser di chiedere "permesso")
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };
   }
 
-  // Accettiamo solo richieste POST
+  // 2. Controllo Metodo (accettiamo solo POST)
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, headers, body: 'Method Not Allowed' };
   }
 
   try {
-    const { items } = JSON.parse(event.body);
+    // 3. Parsing dei dati (fondamentale!)
+    const data = JSON.parse(event.body);
+    const items = data.items;
 
-    // Mappiamo i prodotti del carrello per Stripe
-    // NOTA: Qui stiamo passando direttamente prezzo e nome.
-    // In produzione reale, dovresti passare solo l'ID e recuperare il prezzo dal database per sicurezza.
+    // 4. Creazione Line Items per Stripe
     const lineItems = items.map((item) => ({
       price_data: {
         currency: 'gbp',
         product_data: {
           name: item.name,
-          // images: ['https://tussito.com/images/' + item.image], // Opzionale
         },
-        unit_amount: item.price, // Il prezzo è già in centesimi (es. 1200 per £12.00)
+        unit_amount: item.price, // Assicurati che nel frontend sia in centesimi (es. 1200 per £12.00)
       },
       quantity: item.quantity,
     }));
 
-    // Creiamo la sessione di pagamento
+    // 5. Creazione Sessione Stripe
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: lineItems,
@@ -51,7 +50,7 @@ exports.handler = async (event, context) => {
     };
 
   } catch (error) {
-    console.error("Errore Stripe:", error);
+    console.error("ERRORE BACKEND:", error); // Questo apparirà nei log di Netlify
     return {
       statusCode: 500,
       headers,

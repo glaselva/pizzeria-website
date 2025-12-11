@@ -326,36 +326,45 @@
 
         // Funzione Checkout (Chiama il Backend)
         async function checkout() {
-            const btn = document.getElementById('checkout-btn');
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Attendere...';
-            btn.disabled = true;
+    const btn = document.getElementById('checkout-btn');
+    const originalText = btn.innerText;
+    btn.innerText = 'Attendere...';
+    btn.disabled = true;
 
-            try {
-                // NOTA: Questo URL deve puntare al tuo vero backend (es. Node.js o PHP)
-                // Se non hai ancora un backend, questo darà errore.
-                const response = await fetch('/create-checkout-session', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ items: cart }),
-                });
+    try {
+        // Chiama la funzione serverless su Netlify
+        // NOTA: /.netlify/functions/... è il percorso standard
+        const response = await fetch('/.netlify/functions/create-checkout-session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items: cart }),
+        });
 
-                const session = await response.json();
+        const session = await response.json();
 
-                // Reindirizza a Stripe
-                const result = await stripe.redirectToCheckout({
-                    sessionId: session.id,
-                });
-
-                if (result.error) {
-                    alert(result.error.message);
-                }
-            } catch (error) {
-                console.error('Errore:', error);
-                alert("Simulazione: Qui verresti reindirizzato a Stripe se il backend fosse collegato!\n\nDati inviati: " + JSON.stringify(cart, null, 2));
-                btn.innerHTML = 'VAI AL PAGAMENTO';
-                btn.disabled = false;
-            }
+        // Se c'è un errore dal server, lo mostriamo
+        if (session.error) {
+            alert('Errore dal server: ' + session.error);
+            btn.innerText = originalText;
+            btn.disabled = false;
+            return;
         }
+
+        // Reindirizza a Stripe
+        if (session.url) {
+            window.location.href = session.url;
+        } else {
+            alert('Errore: Nessun URL di pagamento ricevuto.');
+        }
+
+    } catch (e) {
+        console.error("Errore fetch:", e);
+        alert('Errore di connessione al backend. Sei su Netlify?');
+        btn.innerText = originalText;
+        btn.disabled = false;
+    }
+}
+
     </script>
 
     <script>
