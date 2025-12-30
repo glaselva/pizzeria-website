@@ -18,31 +18,42 @@
 </head>
 <body class="text-gray-800 antialiased">
 
-    <!-- NAVBAR -->
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
+    <!-- NAVBAR UNIFICATA -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md top-0">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-extrabold tracking-tighter uppercase">BARI <span class="text-puglia-red">→</span> LDN</a>
             
+            <!-- LOGO -->
+            <a href="index.html" class="text-2xl font-extrabold tracking-tighter uppercase">
+                BARI <span class="text-puglia-red">→</span> LDN
+            </a>
+            
+            <!-- MENU DESKTOP -->
             <div class="hidden md:flex space-x-8 items-center font-semibold text-sm uppercase tracking-wide">
                 <a href="index.html" class="hover:text-puglia-red transition">Home</a>
-                <a href="menu.html" class="hover:text-puglia-red transition">Menu</a>
-                <a href="chisiamo.html" class="text-puglia-red">La Storia</a> <!-- Link Attivo -->
+                <a href="menu.html" class="hover:text-puglia-red transition">Menu</a> <!-- Questo è rosso perché siamo nella pagina Menu -->
+                <a href="chisiamo.html" class="text-puglia-red transition">La Storia</a>
                 <a href="masserie.html" class="hover:text-puglia-red transition">Le Masserie</a>
                 <a href="contatti.html" class="hover:text-puglia-red transition">Contatti</a>
             </div>
 
-            <!-- Icone Mobile/Carrello -->
+            <!-- BOTTONI DESTRO (Mobile + Link Ordina) -->
             <div class="flex items-center space-x-5">
-                <a href="menu.html" class="hover:text-puglia-red transition" title="Vai al Menu per ordinare">
-                    <i class="fas fa-utensils text-xl"></i>
+                
+                <!-- Link rapido "Ordina" (Icona posate) - Sostituisce il carrello -->
+                <a href="https://wa.me/39123456789" target="_blank" class="hover:text-puglia-red transition p-2" title="Ordina su WhatsApp">
+                    <i class="fab fa-whatsapp text-2xl text-green-500"></i> <!-- Ho messo l'icona WhatsApp che è più utile -->
                 </a>
-                <button onclick="toggleMobileMenu()" class="md:hidden focus:outline-none text-2xl p-2">
+
+                <!-- Bottone Burger Menu (SOLO MOBILE) -->
+                <button onclick="toggleMobileMenu()" class="md:hidden focus:outline-none text-2xl p-2 text-gray-700">
                     <i class="fas fa-bars"></i>
                 </button>
-
             </div>
+
         </div>
     </nav>
+    <!-- FINE NAVBAR -->
+
 
     <!-- MOBILE MENU (Nascosto di default) -->
 <div id="mobile-menu" class="fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center space-y-8 text-xl font-bold uppercase">
