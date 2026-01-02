@@ -7,8 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Stripe JS SDK -->
-    <script src="https://js.stripe.com/v3/"></script>
     
     <style>
         body { font-family: 'Open Sans', sans-serif; }
@@ -43,7 +41,7 @@
             <!-- BOTTONI DESTRO (Mobile + Link Ordina) -->
             <div class="flex items-center space-x-5">
                 
-                <!-- Link rapido "Ordina" (Icona posate) - Sostituisce il carrello -->
+                <!-- Link rapido "WhatsApp" -->
                 <a href="https://wa.me/39123456789" target="_blank" class="hover:text-puglia-red transition p-2" title="Ordina su WhatsApp">
                     <i class="fab fa-whatsapp text-2xl text-green-500"></i> <!-- Ho messo l'icona WhatsApp che è più utile -->
                 </a>
@@ -81,7 +79,7 @@
         <p class="text-gray-400 max-w-2xl mx-auto px-4">Scegli i tuoi preferiti. Dalla focaccia unta al punto giusto alle pizze sottili come un foglio.</p>
     </header>
 
-    <!-- FILTRI CATEGORIE (Ancore) -->
+    <!-- FILTRI CATEGORIE -->
     <div class="sticky top-20 z-30 bg-white border-b border-gray-200 py-4 shadow-sm overflow-x-auto">
         <div class="container mx-auto px-6 flex justify-center space-x-4 md:space-x-8 min-w-max">
             <a href="#antipasti" class="px-4 py-2 rounded-full hover:bg-gray-100 text-sm font-bold uppercase text-gray-600 focus:bg-puglia-red focus:text-white transition">Antipasti</a>
@@ -91,7 +89,7 @@
         </div>
     </div>
 
-    <!-- LISTA PRODOTTI (VERSIONE STATICA) -->
+    <!-- LISTA PRODOTTI -->
     <div class="container mx-auto px-6 py-12 max-w-5xl">
 
         <!-- Categoria: ANTIPASTI -->
@@ -158,7 +156,7 @@
 
                 <!-- NUOVA: Napoli -->
                 <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition flex gap-4 items-center border border-gray-100">
-                    <img src="Immagini/napoli.jpg" alt="Pizza Napoli" class="w-24 h-24 object-cover rounded-lg"> <!-- Assicurati di avere l'immagine o togli il tag img -->
+                    <img src="Immagini/napoli.jpg" alt="Pizza Napoli" class="w-24 h-24 object-cover rounded-lg">
                     <div class="flex-1">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="font-bold text-lg">Napoli</h3>
@@ -299,153 +297,6 @@
     </footer>
     
     <!-- JAVASCRIPT LOGIC -->
-    <script>
-        // Stato del carrello
-        let cart = [];
-        
-        // Elementi DOM
-        const cartSidebar = document.getElementById('cart-sidebar');
-        const cartOverlay = document.getElementById('cart-overlay');
-        const cartItemsContainer = document.getElementById('cart-items');
-        const cartTotalEl = document.getElementById('cart-total');
-        const cartCountEl = document.getElementById('cart-count');
-        
-        // Inizializza Stripe (sostituisci con la tua CHIAVE PUBBLICA Stripe)
-        const stripe = Stripe('pk_test_TUA_CHIAVE_PUBBLICA_STRIPE');
-
-        // Funzione Apri/Chiudi Carrello
-        // Funzione Apri/Chiudi Carrello (Versione Senza Blocco)
-        function toggleCart() {
-            // Sposta il carrello dentro/fuori
-            cartSidebar.classList.toggle('translate-x-full');
-            cartSidebar.classList.toggle('cart-open');
-    }
-
-
-        // Aggiungi al carrello
-        function addToCart(name, priceCents, stripePriceId) {
-            // Controlla se esiste già
-            const existingItem = cart.find(item => item.id === stripePriceId);
-            
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    id: stripePriceId,
-                    name: name,
-                    price: priceCents,
-                    quantity: 1
-                });
-            }
-            updateCartUI();
-            
-            // Apri il carrello automaticamente quando aggiungi il primo item
-            if(cart.length === 1 && existingItem === undefined) {
-                if(cartSidebar.classList.contains('translate-x-full')) toggleCart();
-            }
-        }
-
-        // Rimuovi/Diminuisci dal carrello
-        function removeFromCart(stripePriceId) {
-            const itemIndex = cart.findIndex(item => item.id === stripePriceId);
-            
-            if (itemIndex > -1) {
-                cart[itemIndex].quantity -= 1;
-                if (cart[itemIndex].quantity === 0) {
-                    cart.splice(itemIndex, 1);
-                }
-            }
-            updateCartUI();
-        }
-
-        // Aggiorna l'interfaccia
-        function updateCartUI() {
-            cartItemsContainer.innerHTML = '';
-            let totalCents = 0;
-            let totalItems = 0;
-
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p class="text-center text-gray-400 mt-10">Il carrello è vuoto.</p>';
-                document.getElementById('checkout-btn').disabled = true;
-            } else {
-                document.getElementById('checkout-btn').disabled = false;
-                
-                cart.forEach(item => {
-                    totalCents += item.price * item.quantity;
-                    totalItems += item.quantity;
-
-                    // Crea elemento HTML per l'item
-                    const itemEl = document.createElement('div');
-                    itemEl.className = 'flex justify-between items-center border-b border-gray-100 pb-2';
-                    itemEl.innerHTML = `
-                        <div>
-                            <h4 class="font-bold text-sm">${item.name}</h4>
-                            <p class="text-xs text-gray-500">£${(item.price / 100).toFixed(2)} x ${item.quantity}</p>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <button onclick="removeFromCart('${item.id}')" class="w-6 h-6 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center hover:bg-red-100 hover:text-red-500">-</button>
-                            <span class="font-bold w-4 text-center">${item.quantity}</span>
-                            <button onclick="addToCart('${item.name}', ${item.price}, '${item.id}')" class="w-6 h-6 rounded-full bg-gray-900 text-white flex items-center justify-center hover:bg-gray-700">+</button>
-                        </div>
-                    `;
-                    cartItemsContainer.appendChild(itemEl);
-                });
-            }
-
-            // Aggiorna totali
-            cartTotalEl.innerText = '£' + (totalCents / 100).toFixed(2);
-            
-            // Badge contatore
-            cartCountEl.innerText = totalItems;
-            if (totalItems > 0) {
-                cartCountEl.classList.remove('scale-0');
-            } else {
-                cartCountEl.classList.add('scale-0');
-            }
-        }
-
-        // Funzione Checkout (Chiama il Backend)
-        async function checkout() {
-    const btn = document.getElementById('checkout-btn');
-    const originalText = btn.innerText;
-    btn.innerText = 'Attendere...';
-    btn.disabled = true;
-
-    try {
-        // Chiama la funzione serverless su Netlify
-        // NOTA: /.netlify/functions/... è il percorso standard
-        const response = await fetch('https://pizzeria-website-azure.vercel.app/api/checkout', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ items: cart }),
-        });
-
-        const session = await response.json();
-
-        // Se c'è un errore dal server, lo mostriamo
-        if (session.error) {
-            alert('Errore dal server: ' + session.error);
-            btn.innerText = originalText;
-            btn.disabled = false;
-            return;
-        }
-
-        // Reindirizza a Stripe
-        if (session.url) {
-            window.location.href = session.url;
-        } else {
-            alert('Errore: Nessun URL di pagamento ricevuto.');
-        }
-
-    } catch (e) {
-        console.error("Errore fetch:", e);
-        alert('Errore di connessione al backend. Sei su Netlify?');
-        btn.innerText = originalText;
-        btn.disabled = false;
-    }
-}
-
-    </script>
 
     <script>
     function toggleMobileMenu() {
@@ -461,4 +312,5 @@
 
 </body>
 </html>
+
 
