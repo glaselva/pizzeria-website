@@ -39,9 +39,10 @@
                 <a href="contatti.html" class="hover:text-puglia-red transition">Contatti</a>
             </div>
 
-            <!-- BOTTONI DESTRA-->
+            <!-- BOTTONI DESTRO (Mobile + Link Ordina) -->
             <div class="flex items-center space-x-5">
-
+                
+                <!-- Link rapido "Ordina" (Icona posate) - Sostituisce il carrello -->
                 <a href="https://wa.me/39123456789" target="_blank" class="hover:text-puglia-red transition p-2" title="Ordina su WhatsApp">
                     <i class="fab fa-whatsapp text-2xl text-green-500"></i> <!-- Ho messo l'icona WhatsApp che è più utile -->
                 </a>
@@ -72,7 +73,7 @@
 
     <!-- 2. HERO SECTION -->
     <header class="relative h-screen flex items-center justify-center bg-gray-900 overflow-hidden">
-        <!-- Immagine di sfondo -->
+        <!-- Immagine di sfondo (Sostituisci con la tua foto migliore) -->
         <img src="Immagini/hero.jpg" 
              alt="Pizza Barese" 
              class="absolute inset-0 w-full h-full object-cover opacity-50">
@@ -192,7 +193,7 @@
 
     <!-- 6. EVENTI BANNER -->
     <section class="relative py-24 bg-gray-900 flex items-center justify-center text-center">
-        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Festa">
+        <img src="Immagini/indexcta.jpg" class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Festa">
         <div class="relative z-10 px-6">
             <h2 class="text-4xl font-bold text-white mb-4">Hai una festa? Facciamo casino insieme.</h2>
             <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Compleanni, lauree o cene aziendali. Prenota la tua tavolata o l'intero locale.</p>
@@ -235,7 +236,10 @@
             </div>
         </div>
         <div class="container mx-auto px-6 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-            <p>&copy; 2025 Pizzeria Barese London. All rights reserved.</p>
+            <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                <p>&copy; 2025 Pizzeria Barese London. All rights reserved.</p>
+                <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+            </div>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="#" class="hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
                 <a href="#" class="hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
@@ -243,11 +247,13 @@
         </div>
     </footer>
 
-    <!-- Script per Menu Mobile -->
+    <!-- Script per Menu Mobile (Semplice) -->
     <script>
         // Logica base per aprire/chiudere il menu su mobile
         const btn = document.querySelector("button.md\\:hidden");
         const menu = document.querySelector(".md\\:flex");
+        // Nota: per una vera implementazione mobile, aggiungeresti una classe 'hidden' o 'block' 
+        // a un div separato per il menu mobile. Qui è solo predisposto.
     </script>
 
     <script>
@@ -261,8 +267,33 @@
     }
 </script>
 
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 z-50" style="display: none;">
+    <div class="container mx-auto flex justify-between items-center">
+        <p class="text-sm">Utilizziamo cookie per migliorare la tua esperienza. <a href="privacy.html" class="underline">Scopri di più</a></p>
+        <div class="flex space-x-4">
+            <button onclick="acceptCookies()" class="bg-puglia-red px-4 py-2 rounded text-sm">Accetta</button>
+            <button onclick="declineCookies()" class="bg-gray-600 px-4 py-2 rounded text-sm">Rifiuta</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function acceptCookies() {
+        localStorage.setItem('cookies_accepted', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    function declineCookies() {
+        localStorage.setItem('cookies_accepted', 'false');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    // Mostra il banner se non è stato ancora accettato/rifiutato
+    if (localStorage.getItem('cookies_accepted') === null) {
+        document.getElementById('cookie-banner').style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
-
-

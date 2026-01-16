@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Stripe JS SDK -->
+    <script src="https://js.stripe.com/v3/"></script>
     
     <style>
         body { font-family: 'Open Sans', sans-serif; }
@@ -41,7 +43,7 @@
             <!-- BOTTONI DESTRO (Mobile + Link Ordina) -->
             <div class="flex items-center space-x-5">
                 
-                <!-- Link rapido "WhatsApp" -->
+                <!-- Link rapido "Ordina" (Icona posate) - Sostituisce il carrello -->
                 <a href="https://wa.me/39123456789" target="_blank" class="hover:text-puglia-red transition p-2" title="Ordina su WhatsApp">
                     <i class="fab fa-whatsapp text-2xl text-green-500"></i> <!-- Ho messo l'icona WhatsApp che è più utile -->
                 </a>
@@ -74,22 +76,42 @@
 
 
     <!-- HEADER MENU -->
-    <header class="bg-gray-900 text-white pt-32 pb-12 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Il Nostro Menu</h1>
-        <p class="text-gray-400 max-w-2xl mx-auto px-4">Scegli i tuoi preferiti. Dalla focaccia unta al punto giusto alle pizze sottili come un foglio.</p>
+    <header class="bg-gray-900 text-white pt-32 pb-12 text-center relative overflow-hidden">
+        <img src="Immagini/menuhero.jpg"
+             alt="Menu Hero"
+             class="absolute inset-0 w-full h-full object-cover opacity-30">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Il Nostro Menu</h1>
+            <p class="text-gray-400 max-w-2xl mx-auto px-4">Scegli i tuoi preferiti. Dalla focaccia unta al punto giusto alle pizze sottili come un foglio.</p>
+        </div>
     </header>
 
     <!-- FILTRI CATEGORIE -->
-    <div class="sticky top-20 z-30 bg-white border-b border-gray-200 py-4 shadow-sm overflow-x-auto">
-        <div class="container mx-auto px-6 flex justify-center space-x-4 md:space-x-8 min-w-max">
-            <a href="#antipasti" class="px-4 py-2 rounded-full hover:bg-gray-100 text-sm font-bold uppercase text-gray-600 focus:bg-puglia-red focus:text-white transition">Antipasti</a>
-            <a href="#pizze-rosse" class="px-4 py-2 rounded-full hover:bg-gray-100 text-sm font-bold uppercase text-gray-600 focus:bg-puglia-red focus:text-white transition">Pizze Rosse</a>
-            <a href="#pizze-bianche" class="px-4 py-2 rounded-full hover:bg-gray-100 text-sm font-bold uppercase text-gray-600 focus:bg-puglia-red focus:text-white transition">Pizze Bianche</a>
-            <a href="#bevande" class="px-4 py-2 rounded-full hover:bg-gray-100 text-sm font-bold uppercase text-gray-600 focus:bg-puglia-red focus:text-white transition">Bevande</a>
+    <div class="sticky top-20 z-30 bg-white border-b border-gray-200 py-4 shadow-sm">
+        <div class="container mx-auto px-6">
+            <!-- Mobile Dropdown -->
+            <div class="md:hidden">
+                <select id="menu-select" onchange="filterMenu(this.value)" class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm font-bold uppercase text-gray-600 focus:outline-none focus:ring-2 focus:ring-puglia-red">
+                    <option value="all">Menu Completo</option>
+                    <option value="antipasti">Antipasti</option>
+                    <option value="pizze-rosse">Pizze Rosse</option>
+                    <option value="pizze-bianche">Pizze Bianche</option>
+                    <option value="bevande">Bevande</option>
+                </select>
+            </div>
+            <!-- Desktop Buttons -->
+            <div class="hidden md:flex justify-center space-x-8">
+                <button onclick="filterMenu('all')" class="filter-btn px-4 py-2 rounded-full hover:bg-gray-100 text-sm font-bold uppercase text-gray-600 focus:bg-puglia-red focus:text-white transition" data-category="all">Menu Completo</button>
+                <button onclick="filterMenu('antipasti')" class="filter-btn px-4 py-2 rounded-full hover:bg-gray-100 text-sm font-bold uppercase text-gray-600 focus:bg-puglia-red focus:text-white transition" data-category="antipasti">Antipasti</button>
+                <button onclick="filterMenu('pizze-rosse')" class="filter-btn px-4 py-2 rounded-full hover:bg-gray-100 text-sm font-bold uppercase text-gray-600 focus:bg-puglia-red focus:text-white transition" data-category="pizze-rosse">Pizze Rosse</button>
+                <button onclick="filterMenu('pizze-bianche')" class="filter-btn px-4 py-2 rounded-full hover:bg-gray-100 text-sm font-bold uppercase text-gray-600 focus:bg-puglia-red focus:text-white transition" data-category="pizze-bianche">Pizze Bianche</button>
+                <button onclick="filterMenu('bevande')" class="filter-btn px-4 py-2 rounded-full hover:bg-gray-100 text-sm font-bold uppercase text-gray-600 focus:bg-puglia-red focus:text-white transition" data-category="bevande">Bevande</button>
+            </div>
         </div>
     </div>
 
-    <!-- LISTA PRODOTTI -->
+    <!-- LISTA PRODOTTI (VERSIONE STATICA) -->
     <div class="container mx-auto px-6 py-12 max-w-5xl">
 
         <!-- Categoria: ANTIPASTI -->
@@ -156,7 +178,7 @@
 
                 <!-- NUOVA: Napoli -->
                 <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition flex gap-4 items-center border border-gray-100">
-                    <img src="Immagini/napoli.jpg" alt="Pizza Napoli" class="w-24 h-24 object-cover rounded-lg">
+                    <img src="Immagini/napoli.jpg" alt="Pizza Napoli" class="w-24 h-24 object-cover rounded-lg"> <!-- Assicurati di avere l'immagine o togli il tag img -->
                     <div class="flex-1">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="font-bold text-lg">Napoli</h3>
@@ -285,18 +307,198 @@
 
     </div>
 
-    
-  
-
-        <footer class="bg-gray-900 text-white py-10 border-t border-gray-800 text-center">
-        <div class="flex justify-center space-x-6 mb-8">
-            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-puglia-red transition"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-facebook-f"></i></a>
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16">
+            <div>
+                <h3 class="text-2xl font-bold mb-6">BARI → LDN</h3>
+                <p class="text-gray-400">Portiamo la Puglia a Londra, un morso alla volta. Solo prodotti autentici, niente imitazioni.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase tracking-wider text-sm text-gray-500">Esplora</h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li><a href="menu.html" class="hover:text-white transition">Menu</a></li>
+                    <li><a href="chisiamo.html" class="hover:text-white transition">Chi Siamo</a></li>
+                    <li><a href="masserie.html" class="hover:text-white transition">Le Masserie</a></li>
+                    <li><a href="contatti.html" class="hover:text-white transition">Contatti</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase tracking-wider text-sm text-gray-500">Vieni a trovarci</h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li><i class="fas fa-map-marker-alt mr-3 w-5"></i> 123 High Street, London</li>
+                    <li><i class="fas fa-phone mr-3 w-5"></i> +44 020 1234 5678</li>
+                    <li><i class="fas fa-envelope mr-3 w-5"></i> ciao@pizzeriabarese.london</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase tracking-wider text-sm text-gray-500">Orari</h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex justify-between"><span>Lun - Ven</span> <span>12:00 - 23:00</span></li>
+                    <li class="flex justify-between text-white font-bold"><span>Sab - Dom</span> <span>12:00 - 00:00</span></li>
+                </ul>
+            </div>
         </div>
-        <p class="text-gray-500 text-sm">&copy; 2025 Pizzeria Barese London.</p>
+        <div class="container mx-auto px-6 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+            <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                <p>&copy; 2025 Pizzeria Barese London. All rights reserved.</p>
+                <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+            </div>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+            </div>
+        </div>
     </footer>
     
     <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Stato del carrello
+        let cart = [];
+        
+        // Elementi DOM
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalEl = document.getElementById('cart-total');
+        const cartCountEl = document.getElementById('cart-count');
+        
+        // Inizializza Stripe (sostituisci con la tua CHIAVE PUBBLICA Stripe)
+        const stripe = Stripe('pk_test_TUA_CHIAVE_PUBBLICA_STRIPE');
+
+        // Funzione Apri/Chiudi Carrello
+        // Funzione Apri/Chiudi Carrello (Versione Senza Blocco)
+        function toggleCart() {
+            // Sposta il carrello dentro/fuori
+            cartSidebar.classList.toggle('translate-x-full');
+            cartSidebar.classList.toggle('cart-open');
+    }
+
+
+        // Aggiungi al carrello
+        function addToCart(name, priceCents, stripePriceId) {
+            // Controlla se esiste già
+            const existingItem = cart.find(item => item.id === stripePriceId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: stripePriceId,
+                    name: name,
+                    price: priceCents,
+                    quantity: 1
+                });
+            }
+            updateCartUI();
+            
+            // Apri il carrello automaticamente quando aggiungi il primo item
+            if(cart.length === 1 && existingItem === undefined) {
+                if(cartSidebar.classList.contains('translate-x-full')) toggleCart();
+            }
+        }
+
+        // Rimuovi/Diminuisci dal carrello
+        function removeFromCart(stripePriceId) {
+            const itemIndex = cart.findIndex(item => item.id === stripePriceId);
+            
+            if (itemIndex > -1) {
+                cart[itemIndex].quantity -= 1;
+                if (cart[itemIndex].quantity === 0) {
+                    cart.splice(itemIndex, 1);
+                }
+            }
+            updateCartUI();
+        }
+
+        // Aggiorna l'interfaccia
+        function updateCartUI() {
+            cartItemsContainer.innerHTML = '';
+            let totalCents = 0;
+            let totalItems = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-center text-gray-400 mt-10">Il carrello è vuoto.</p>';
+                document.getElementById('checkout-btn').disabled = true;
+            } else {
+                document.getElementById('checkout-btn').disabled = false;
+                
+                cart.forEach(item => {
+                    totalCents += item.price * item.quantity;
+                    totalItems += item.quantity;
+
+                    // Crea elemento HTML per l'item
+                    const itemEl = document.createElement('div');
+                    itemEl.className = 'flex justify-between items-center border-b border-gray-100 pb-2';
+                    itemEl.innerHTML = `
+                        <div>
+                            <h4 class="font-bold text-sm">${item.name}</h4>
+                            <p class="text-xs text-gray-500">£${(item.price / 100).toFixed(2)} x ${item.quantity}</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button onclick="removeFromCart('${item.id}')" class="w-6 h-6 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center hover:bg-red-100 hover:text-red-500">-</button>
+                            <span class="font-bold w-4 text-center">${item.quantity}</span>
+                            <button onclick="addToCart('${item.name}', ${item.price}, '${item.id}')" class="w-6 h-6 rounded-full bg-gray-900 text-white flex items-center justify-center hover:bg-gray-700">+</button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(itemEl);
+                });
+            }
+
+            // Aggiorna totali
+            cartTotalEl.innerText = '£' + (totalCents / 100).toFixed(2);
+            
+            // Badge contatore
+            cartCountEl.innerText = totalItems;
+            if (totalItems > 0) {
+                cartCountEl.classList.remove('scale-0');
+            } else {
+                cartCountEl.classList.add('scale-0');
+            }
+        }
+
+        // Funzione Checkout (Chiama il Backend)
+        async function checkout() {
+    const btn = document.getElementById('checkout-btn');
+    const originalText = btn.innerText;
+    btn.innerText = 'Attendere...';
+    btn.disabled = true;
+
+    try {
+        // Chiama la funzione serverless su Netlify
+        // NOTA: /.netlify/functions/... è il percorso standard
+        const response = await fetch('https://pizzeria-website-azure.vercel.app/api/checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items: cart }),
+        });
+
+        const session = await response.json();
+
+        // Se c'è un errore dal server, lo mostriamo
+        if (session.error) {
+            alert('Errore dal server: ' + session.error);
+            btn.innerText = originalText;
+            btn.disabled = false;
+            return;
+        }
+
+        // Reindirizza a Stripe
+        if (session.url) {
+            window.location.href = session.url;
+        } else {
+            alert('Errore: Nessun URL di pagamento ricevuto.');
+        }
+
+    } catch (e) {
+        console.error("Errore fetch:", e);
+        alert('Errore di connessione al backend. Sei su Netlify?');
+        btn.innerText = originalText;
+        btn.disabled = false;
+    }
+}
+
+    </script>
 
     <script>
     function toggleMobileMenu() {
@@ -307,10 +509,41 @@
             menu.classList.add('translate-x-full');    // CHIUDE (Rimette il nascondiglio)
         }
     }
-    </script>
+
+    // Funzione per filtrare il menu
+    function filterMenu(category) {
+        const sections = document.querySelectorAll('section[id]');
+        const buttons = document.querySelectorAll('.filter-btn');
+
+        // Rimuovi classe active da tutti i bottoni
+        buttons.forEach(btn => btn.classList.remove('bg-puglia-red', 'text-white'));
+
+        // Aggiungi classe active al bottone cliccato
+        const activeButton = document.querySelector(`[data-category="${category}"]`);
+        if (activeButton) {
+            activeButton.classList.add('bg-puglia-red', 'text-white');
+        }
+
+        // Aggiorna il select dropdown
+        const select = document.getElementById('menu-select');
+        if (select) select.value = category;
+
+        // Mostra/nascondi sezioni
+        sections.forEach(section => {
+            if (category === 'all' || section.id === category) {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        });
+    }
+
+    // Inizializza con "Menu Completo" attivo
+    document.addEventListener('DOMContentLoaded', function() {
+        filterMenu('all');
+    });
+</script>
 
 
 </body>
 </html>
-
-

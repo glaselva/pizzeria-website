@@ -38,10 +38,10 @@
                 <a href="contatti.html" class="hover:text-puglia-red transition">Contatti</a>
             </div>
 
-            <!-- BOTTONI DESTRA -->
+            <!-- BOTTONI DESTRO (Mobile + Link Ordina) -->
             <div class="flex items-center space-x-5">
                 
-                <!-- Link rapido "WhatsApp" -->
+                <!-- Link rapido "Ordina" (Icona posate) - Sostituisce il carrello -->
                 <a href="https://wa.me/39123456789" target="_blank" class="hover:text-puglia-red transition p-2" title="Ordina su WhatsApp">
                     <i class="fab fa-whatsapp text-2xl text-green-500"></i> <!-- Ho messo l'icona WhatsApp che è più utile -->
                 </a>
@@ -75,8 +75,8 @@
 
     <!-- HERO SECTION -->
     <header class="relative h-[50vh] flex items-center justify-center overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1505576186413-4c07c1b52994?q=80&w=2070&auto=format&fit=crop" 
-             alt="Campi Puglia" 
+        <img src="Immagini/heromasserie.jpg"
+             alt="Hero Masserie"
              class="absolute inset-0 w-full h-full object-cover">
         <div class="absolute inset-0 bg-black/40"></div>
         
@@ -174,7 +174,7 @@
 
     <!-- CALL TO ACTION FINALE -->
     <section class="py-24 bg-gray-900 text-white text-center relative overflow-hidden">
-        <!-- Pattern di sfondo leggero -->
+        <!-- Pattern di sfondo leggero (opzionale) -->
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
         
         <div class="relative z-10 px-6">
@@ -192,8 +192,44 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-800 text-gray-400 py-8 text-center border-t border-gray-700">
-        <p>&copy; 2025 Pizzeria Barese London.</p>
+    <footer class="bg-gray-900 text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16">
+            <div>
+                <h3 class="text-2xl font-bold mb-6">BARI → LDN</h3>
+                <p class="text-gray-400">Portiamo la Puglia a Londra, un morso alla volta. Solo prodotti autentici, niente imitazioni.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase tracking-wider text-sm text-gray-500">Esplora</h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li><a href="menu.html" class="hover:text-white transition">Menu</a></li>
+                    <li><a href="chisiamo.html" class="hover:text-white transition">Chi Siamo</a></li>
+                    <li><a href="masserie.html" class="hover:text-white transition">Le Masserie</a></li>
+                    <li><a href="contatti.html" class="hover:text-white transition">Contatti</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase tracking-wider text-sm text-gray-500">Vieni a trovarci</h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li><i class="fas fa-map-marker-alt mr-3 w-5"></i> 123 High Street, London</li>
+                    <li><i class="fas fa-phone mr-3 w-5"></i> +44 020 1234 5678</li>
+                    <li><i class="fas fa-envelope mr-3 w-5"></i> ciao@pizzeriabarese.london</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase tracking-wider text-sm text-gray-500">Orari</h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex justify-between"><span>Lun - Ven</span> <span>12:00 - 23:00</span></li>
+                    <li class="flex justify-between text-white font-bold"><span>Sab - Dom</span> <span>12:00 - 00:00</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+            <p>&copy; 2025 Pizzeria Barese London. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -210,4 +246,3 @@
 
 </body>
 </html>
-

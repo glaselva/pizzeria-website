@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Pizzeria Barese London</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+        .text-puglia-red { color: #D32F2F; }
+        .bg-puglia-red { background-color: #D32F2F; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- NAVBAR UNIFICATA -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md top-0">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+            <!-- LOGO -->
+            <a href="index.html" class="text-2xl font-extrabold tracking-tighter uppercase">
+                BARI <span class="text-puglia-red">→</span> LDN
+            </a>
+
+            <!-- MENU DESKTOP -->
+            <div class="hidden md:flex space-x-8 items-center font-semibold text-sm uppercase tracking-wide">
+                <a href="index.html" class="hover:text-puglia-red transition">Home</a>
+                <a href="menu.html" class="hover:text-puglia-red transition">Menu</a>
+                <a href="chisiamo.html" class="hover:text-puglia-red transition">La Storia</a>
+                <a href="masserie.html" class="hover:text-puglia-red transition">Le Masserie</a>
+                <a href="contatti.html" class="hover:text-puglia-red transition">Contatti</a>
+            </div>
+
+            <!-- BOTTONI DESTRO (Mobile + Link Ordina) -->
+            <div class="flex items-center space-x-5">
+
+                <a href="https://wa.me/39123456789" target="_blank" class="hover:text-puglia-red transition p-2" title="Ordina su WhatsApp">
+                    <i class="fab fa-whatsapp text-2xl text-green-500"></i>
+                </a>
+
+                <!-- Bottone Burger Menu (SOLO MOBILE) -->
+                <button onclick="toggleMobileMenu()" class="md:hidden focus:outline-none text-2xl p-2 text-gray-700">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+        </div>
+    </nav>
+    <!-- FINE NAVBAR -->
+
+    <!-- MOBILE MENU (Nascosto di default) -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center space-y-8 text-xl font-bold uppercase">
+        <!-- Tasto Chiudi -->
+        <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-3xl text-gray-800 focus:outline-none">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <!-- Link -->
+        <a href="index.html" class="hover:text-puglia-red transition">Home</a>
+        <a href="menu.html" class="hover:text-puglia-red transition">Menu</a>
+        <a href="chisiamo.html" class="hover:text-puglia-red transition">La Storia</a>
+        <a href="masserie.html" class="hover:text-puglia-red transition">Le Masserie</a>
+        <a href="contatti.html" class="hover:text-puglia-red transition">Contatti</a>
+    </div>
+
+    <!-- HEADER -->
+    <header class="bg-gray-900 text-white pt-32 pb-12 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
+        <p class="text-gray-400 max-w-2xl mx-auto px-4">La tua privacy è importante per noi. Leggi come trattiamo i tuoi dati personali.</p>
+    </header>
+
+    <!-- CONTENUTO -->
+    <div class="container mx-auto px-6 py-12 max-w-4xl">
+
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+            <h2 class="text-2xl font-bold mb-6 text-puglia-red">Informativa sulla Privacy</h2>
+
+            <p class="mb-6 text-gray-600">
+                Questa Informativa sulla Privacy descrive come Pizzeria Barese London raccoglie, utilizza e protegge le tue informazioni personali quando utilizzi il nostro sito web e i nostri servizi.
+            </p>
+
+            <h3 class="text-xl font-bold mb-4">1. Informazioni che Raccogliamo</h3>
+            <p class="mb-6 text-gray-600">
+                Possiamo raccogliere informazioni personali come nome, indirizzo email, numero di telefono quando effettui prenotazioni o contatti con noi. Utilizziamo anche cookie per migliorare la tua esperienza sul sito.
+            </p>
+
+            <h3 class="text-xl font-bold mb-4">2. Come Utilizziamo le Tue Informazioni</h3>
+            <p class="mb-6 text-gray-600">
+                Utilizziamo le tue informazioni per:
+            </p>
+            <ul class="list-disc list-inside mb-6 text-gray-600">
+                <li>Elaborare le tue prenotazioni e ordini</li>
+                <li>Comunicare con te riguardo ai nostri servizi</li>
+                <li>Migliorare il nostro sito web e servizi</li>
+                <li>Conformarci alle leggi applicabili</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mb-4">3. Cookie</h3>
+            <p class="mb-6 text-gray-600">
+                Utilizziamo cookie per personalizzare la tua esperienza, analizzare il traffico del sito e migliorare le nostre offerte. Puoi controllare l'uso dei cookie attraverso le impostazioni del tuo browser.
+            </p>
+
+            <h3 class="text-xl font-bold mb-4">4. Condivisione delle Informazioni</h3>
+            <p class="mb-6 text-gray-600">
+                Non vendiamo o affittiamo le tue informazioni personali a terzi. Possiamo condividere informazioni solo quando necessario per fornire i nostri servizi o quando richiesto dalla legge.
+            </p>
+
+            <h3 class="text-xl font-bold mb-4">5. Sicurezza</h3>
+            <p class="mb-6 text-gray-600">
+                Adottiamo misure di sicurezza appropriate per proteggere le tue informazioni personali da accessi non autorizzati, alterazioni, divulgazione o distruzione.
+            </p>
+
+            <h3 class="text-xl font-bold mb-4">6. I Tuoi Diritti</h3>
+            <p class="mb-6 text-gray-600">
+                Hai il diritto di accedere, correggere, cancellare o limitare l'elaborazione delle tue informazioni personali. Per esercitare questi diritti, contattaci tramite le informazioni fornite di seguito.
+            </p>
+
+            <h3 class="text-xl font-bold mb-4">7. Contatti</h3>
+            <p class="mb-6 text-gray-600">
+                Se hai domande sulla nostra Informativa sulla Privacy, puoi contattarci a:<br>
+                Email: privacy@pizzeriabarese.london<br>
+                Telefono: +44 020 1234 5678<br>
+                Indirizzo: 123 High Street, London, E1 6AN
+            </p>
+
+            <p class="text-sm text-gray-500">
+                Ultimo aggiornamento: 16 Gennaio 2026
+            </p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16">
+            <div>
+                <h3 class="text-2xl font-bold mb-6">BARI → LDN</h3>
+                <p class="text-gray-400">Portiamo la Puglia a Londra, un morso alla volta. Solo prodotti autentici, niente imitazioni.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase tracking-wider text-sm text-gray-500">Esplora</h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li><a href="menu.html" class="hover:text-white transition">Menu</a></li>
+                    <li><a href="chisiamo.html" class="hover:text-white transition">Chi Siamo</a></li>
+                    <li><a href="masserie.html" class="hover:text-white transition">Le Masserie</a></li>
+                    <li><a href="contatti.html" class="hover:text-white transition">Contatti</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase tracking-wider text-sm text-gray-500">Vieni a trovarci</h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li><i class="fas fa-map-marker-alt mr-3 w-5"></i> 123 High Street, London</li>
+                    <li><i class="fas fa-phone mr-3 w-5"></i> +44 020 1234 5678</li>
+                    <li><i class="fas fa-envelope mr-3 w-5"></i> ciao@pizzeriabarese.london</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 uppercase tracking-wider text-sm text-gray-500">Orari</h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex justify-between"><span>Lun - Ven</span> <span>12:00 - 23:00</span></li>
+                    <li class="flex justify-between text-white font-bold"><span>Sab - Dom</span> <span>12:00 - 00:00</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+            <p>&copy; 2025 Pizzeria Barese London. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        if (menu.classList.contains('translate-x-full')) {
+            menu.classList.remove('translate-x-full');
+        } else {
+            menu.classList.add('translate-x-full');
+        }
+    }
+    </script>
+
+</body>
+</html>
